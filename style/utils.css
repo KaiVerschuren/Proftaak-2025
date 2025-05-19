@@ -1,0 +1,159 @@
+@import url("normalize.css");
+@import url("style.css");
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.05em;
+  background-color: var(--primary);
+  color: var(--text-reverse);
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  box-shadow: 0 10px 20px rgba(252, 213, 53, 0.5), 0 6px 6px rgba(252, 213, 53, 0.5), 0 0 100px -10px var(--primary);
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 18px rgba(252, 213, 53, 0.5), 0 10px 10px rgba(252, 213, 53, 0.5), 0 0 120px -10px var(--primary);
+}
+
+.btnNoShadow {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.05em;
+  background-color: var(--primary);
+  color: var(--text-reverse);
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+.btnNoShadow:hover {
+  transform: translateY(-3px);
+}
+
+.accentShadow {
+  box-shadow: 0 5px 15px rgba(15, 18, 35, .6), 0 0 20px rgba(15, 18, 35, .5);
+}
+
+.input {
+  background-color: var(--accent);
+  border: none;
+  outline: none;
+  padding: .5rem 1rem;
+  font-weight: 600;
+}
+
+.noStyleUL {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.resetAnchorTag {
+  text-decoration: none;
+}
+
+.gradientText {
+  background: linear-gradient(to left, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.removeArrow::-webkit-outer-spin-button,
+.removeArrow::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translatey(50%);
+  transition: all 1s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* xs */
+@media (min-width: 475px) {
+  .container {
+      width: 475px;
+  }
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .container {
+      width: 640px;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .container {
+      width: 768px;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .container {
+      width: 1024px;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .container {
+      width: 1280px;
+  }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .container {
+      width: 1536px;
+  }
+}
+
+
+/* paste this on css files where responsive layout is applicable */
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */
