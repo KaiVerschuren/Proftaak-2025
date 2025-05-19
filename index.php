@@ -1,4 +1,6 @@
 <?php
-include 'functions.php';
+include 'inc/php/functions.php';
 
+
+head("Homepage");
 ?>
