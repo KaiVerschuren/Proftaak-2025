@@ -1,0 +1,64 @@
+:root {
+  --black: oklch(12.9% 0.042 264.695);
+  --black-soft: oklch(27.9% 0.041 260.031);
+  --white: oklch(96.8% 0.007 247.896);
+  --white-soft: oklch(70.4% 0.04 256.788);
+
+  --background: oklch(96.8% 0.007 247.896);
+
+  --primary: oklch(76.9% 0.188 70.08);
+  --secondary: oklch(59.6% 0.145 163.225);
+  --accent: oklch(20.8% 0.042 265.755);
+  /*! --accent: #0f1223; BACKUP */
+
+  --yes: #22c55e;
+  --no: #b91c1c;
+
+  /*Primary rgba: 	rgba(252, 213, 53, 1) */
+  /*accent rgba: 	rgba(15, 18, 35, 1)  */
+}
+
+* {
+  margin: 0;
+  line-height: calc(1em + 0.5rem);
+  box-sizing: border-box;
+  color: var(--text);
+  font-family: montserrat, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+button {
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  color: var(--secondary);
+  font-weight: 700;
+}
