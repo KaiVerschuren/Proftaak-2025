@@ -14,8 +14,8 @@
   --yes: #22c55e;
   --no: #b91c1c;
 
-  /*Primary rgba: 	rgba(252, 213, 53, 1) */
-  /*accent rgba: 	rgba(15, 18, 35, 1)  */
+  /*Primary rgba: 	rgba(253, 154, 0, 1) */
+  /*accent rgba: 	rgba(0, 153, 102, 1)  */
 }
 
 * {
@@ -32,7 +32,10 @@ html {
 
 body {
   overflow-x: hidden;
+  /* background-color: var(--background); */
   background-color: var(--background);
+  background-image: radial-gradient(oklch(0.844 0.0136 262.37) 1px, transparent 1px);
+  background-size: 20px 20px;
   color: var(--text);
 }
 
@@ -43,6 +46,12 @@ canvas {
   display: block;
   max-width: 100%;
   user-select: none;
+  user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 button {

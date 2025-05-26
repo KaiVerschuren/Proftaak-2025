@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+header > * {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.headerTitle {
+    justify-content: start;
+}
+
+.headerLinks {
+    display: flex;
+    gap: .5em;
+}
+
+.headerLink:hover {
+    transition: 0.3s ease;
+    color: var(--primary);
+}
+
+.headerCallToAction {
+    justify-content: end;
+}
