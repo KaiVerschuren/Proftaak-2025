@@ -1,25 +1,36 @@
 @import url("normalize.css");
 @import url("style.css");
+@import url("components/header.css");
+@import url("components/homepage.css");
+@import url("components/top.css");
 
 .btn {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 600;
   text-decoration: none;
   letter-spacing: -0.05em;
-  background-color: var(--primary);
-  color: var(--text-reverse);
+  background-color: var(--secondary);
+  color: var(--black);
   padding: 0.5em 1em;
   border-radius: 6px;
   border: none;
   outline: none;
-  box-shadow: 0 10px 20px rgba(252, 213, 53, 0.5), 0 6px 6px rgba(252, 213, 53, 0.5), 0 0 100px -10px var(--primary);
+  box-shadow: 0 10px 20px rgba(0, 153, 102, 0.5), 0 6px 6px rgba(0, 153, 102, 0.5), 0 0 100px -10px var(--secondary);
   transition: 0.3s ease;
   z-index: 10;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 18px rgba(252, 213, 53, 0.5), 0 10px 10px rgba(252, 213, 53, 0.5), 0 0 120px -10px var(--primary);
+  box-shadow: 0 14px 18px rgba(0, 153, 102, 0.5), 0 10px 10px rgba(0, 153, 102, 0.5), 0 0 120px -10px var(--secondary);
+  color: var(--white);
+}
+
+.btnIcon {
+  width: 1.25em;
 }
 
 .btnNoShadow {
@@ -39,6 +50,19 @@
 
 .btnNoShadow:hover {
   transform: translateY(-3px);
+}
+
+.titlePrimary {
+  color: var(--primary);
+}
+
+.titleSecondary {
+  color: var(--black);
+  transition: 0.3s ease;
+}
+
+.titleSecondary:hover {
+  color: var(--secondary);
 }
 
 .accentShadow {

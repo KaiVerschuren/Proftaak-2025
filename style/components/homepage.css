@@ -1,0 +1,15 @@
+.hero {
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+    gap: 10em;
+}
+
+.heroParagraph {
+    margin-bottom: 1em;
+}
+
+.heroImg {
+    width: 25em;
+}
+
