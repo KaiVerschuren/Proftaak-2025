@@ -3,13 +3,16 @@
 }
 
 .topTitle {
-    text-align: center;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  padding-bottom: 1em;
 }
 
 .topCardWrapper {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
 }
 
 .topCard {
@@ -17,24 +20,33 @@
   aspect-ratio: 3/4;
   background: var(--white);
   border-radius: 1em;
-  border: red 1px solid;
+  /* border: red 1px solid; */
   position: relative;
 }
 
 .topCardInfo {
   padding: 1.5em 1.8em;
+  /* font-size: 1.25rem; */
+}
+
+.topCardTitle {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.topCardText {
   font-size: 1.25rem;
 }
 
 .topCardImg {
   width: 100%;
   aspect-ratio: 6/5;
-  border-radius: 1em;
+  border-radius: 1em 1em 0em 0em;
+  background: var(--black);
 }
 
-.topCartButton {
+.topCardButton {
   position: absolute;
   left: 1.8em;
-  /* transform: translateX(-50%); */
   bottom: 1.5em;
 }

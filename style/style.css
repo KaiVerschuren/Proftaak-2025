@@ -32,9 +32,12 @@ html {
 
 body {
   overflow-x: hidden;
-  /* background-color: var(--background); */
   background-color: var(--background);
-  background-image: radial-gradient(oklch(0.88 0.0148 264.49) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(
+    oklch(0.88 0.0148 264.49) 1.5px,
+    transparent 1.5px
+  );
+  background-attachment: fixed;
   background-size: 25px 25px;
   color: var(--text);
 }

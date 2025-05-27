@@ -4,31 +4,6 @@
 @import url("components/homepage.css");
 @import url("components/top.css");
 
-.btn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: -0.05em;
-  background-color: var(--secondary);
-  color: var(--black);
-  padding: 0.5em 1em;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-  box-shadow: 0 10px 20px rgba(0, 153, 102, 0.5), 0 6px 6px rgba(0, 153, 102, 0.5), 0 0 100px -10px var(--secondary);
-  transition: 0.3s ease;
-  z-index: 10;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 18px rgba(0, 153, 102, 0.5), 0 10px 10px rgba(0, 153, 102, 0.5), 0 0 120px -10px var(--secondary);
-  color: var(--white);
-}
-
 .btnPrimary {
   display: flex;
   justify-content: space-between;
@@ -43,37 +18,49 @@
   border-radius: 6px;
   border: none;
   outline: none;
-  box-shadow: 0 10px 20px rgba(253, 154, 0, 0.5), 0 6px 6px rgba(253, 154, 0, 0.5), 0 0 100px -10px var(--primary);
+  box-shadow: 0 10px 20px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
+    0 6px 6px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
+    0 0 100px -10px var(--primary);
   transition: 0.3s ease;
-  z-index: 10;
 }
 
 .btnPrimary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 18px rgba(253, 154, 0, 0.5), 0 10px 10px rgba(253, 154, 0, 0.5), 0 0 120px -10px var(--primary);
+  box-shadow: 0 14px 18px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
+    0 10px 10px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
+    0 0 120px -10px var(--primary);
 }
 
-.btnIcon {
-  width: 1.25em;
-}
-
-.btnNoShadow {
-  display: inline-block;
+.btnSecondary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 600;
   text-decoration: none;
   letter-spacing: -0.05em;
-  background-color: var(--primary);
-  color: var(--text-reverse);
+  background-color: var(--secondary);
+  color: var(--black);
   padding: 0.5em 1em;
   border-radius: 6px;
   border: none;
   outline: none;
+  box-shadow: 0 10px 20px oklch(from var(--secondary) l c h / calc(alpha - 0.5)),
+    0 6px 6px oklch(from var(--secondary) l c h / calc(alpha - 0.5)),
+    0 0 100px -10px var(--secondary);
   transition: 0.3s ease;
-  z-index: 10;
 }
 
-.btnNoShadow:hover {
+.btnSecondary:hover {
   transform: translateY(-3px);
+  box-shadow: 0 14px 18px oklch(from var(--secondary) l c h / calc(alpha - 0.5)),
+    0 10px 10px oklch(from var(--secondary) l c h / calc(alpha - 0.5)),
+    0 0 120px -10px var(--secondary);
+  color: var(--white);
+}
+
+.btnIcon {
+  width: 1.25em;
 }
 
 .titlePrimary {
@@ -90,18 +77,18 @@
 }
 
 .accentShadow {
-  box-shadow: 0 5px 15px rgba(15, 18, 35, .6), 0 0 20px rgba(15, 18, 35, .5);
+  box-shadow: 0 5px 15px rgba(15, 18, 35, 0.6), 0 0 20px rgba(15, 18, 35, 0.5);
 }
 
 .cardShadow {
-  box-shadow: 0px 39px 77px -50px rgba(15, 18, 35, .5);
+  box-shadow: 0px 35px 75px -50px rgba(15, 18, 35, 0.75);
 }
 
 .input {
   background-color: var(--accent);
   border: none;
   outline: none;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   font-weight: 600;
 }
 
@@ -189,7 +176,6 @@
     width: 1536px;
   }
 }
-
 
 /* paste this on css files where responsive layout is applicable */
 /* xs */
