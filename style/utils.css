@@ -77,11 +77,11 @@
 }
 
 .accentShadow {
-  box-shadow: 0 5px 15px rgba(15, 18, 35, 0.6), 0 0 20px rgba(15, 18, 35, 0.5);
+  box-shadow: 0 5px 15px oklch(from var(--black) l c h / calc(alpha - 0.4)), 0 0 20px oklch(from var(--black) l c h / calc(alpha - 0.5));
 }
 
 .cardShadow {
-  box-shadow: 0px 35px 75px -50px rgba(15, 18, 35, 0.75);
+  box-shadow: 0px 35px 75px -50px oklch(from var(--black) l c h / calc(alpha - 0.25));
 }
 
 .input {
