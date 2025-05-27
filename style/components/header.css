@@ -1,8 +1,8 @@
 header {
     display: flex;
     justify-content: space-between;
-    padding-left: 2em;
-    padding-right: 2em;
+    /* padding-left: 3.5em; */
+    /* padding-right: 3.5em; */
 }
 
 header > * {
@@ -13,6 +13,7 @@ header > * {
 }
 .headerTitle {
     justify-content: start;
+    /* padding-left: 2em; */
 }
 
 .headerLinks {
@@ -27,4 +28,5 @@ header > * {
 
 .headerCallToAction {
     justify-content: end;
+    /* padding-right: 2em; */
 }
