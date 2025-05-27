@@ -29,6 +29,30 @@
   color: var(--white);
 }
 
+.btnPrimary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.05em;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  box-shadow: 0 10px 20px rgba(253, 154, 0, 0.5), 0 6px 6px rgba(253, 154, 0, 0.5), 0 0 100px -10px var(--primary);
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 18px rgba(253, 154, 0, 0.5), 0 10px 10px rgba(253, 154, 0, 0.5), 0 0 120px -10px var(--primary);
+}
+
 .btnIcon {
   width: 1.25em;
 }
@@ -57,16 +81,20 @@
 }
 
 .titleSecondary {
-  color: var(--black);
   transition: 0.3s ease;
 }
 
 .titleSecondary:hover {
   color: var(--secondary);
+  text-shadow: 0 0 20px rgba(0, 153, 102, 0.3);
 }
 
 .accentShadow {
   box-shadow: 0 5px 15px rgba(15, 18, 35, .6), 0 0 20px rgba(15, 18, 35, .5);
+}
+
+.cardShadow {
+  box-shadow: 0px 39px 77px -50px rgba(15, 18, 35, .5);
 }
 
 .input {
@@ -123,42 +151,42 @@
 /* xs */
 @media (min-width: 475px) {
   .container {
-      width: 475px;
+    width: 475px;
   }
 }
 
 /* sm */
 @media (min-width: 640px) {
   .container {
-      width: 640px;
+    width: 640px;
   }
 }
 
 /* md */
 @media (min-width: 768px) {
   .container {
-      width: 768px;
+    width: 768px;
   }
 }
 
 /* lg */
 @media (min-width: 1024px) {
   .container {
-      width: 1024px;
+    width: 1024px;
   }
 }
 
 /* xl */
 @media (min-width: 1280px) {
   .container {
-      width: 1280px;
+    width: 1280px;
   }
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
   .container {
-      width: 1536px;
+    width: 1536px;
   }
 }
 

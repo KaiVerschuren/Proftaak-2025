@@ -1,69 +1,40 @@
-.card {
-  --gradient: linear-gradient(to right, var(--secondary) 0%, #11a3c8 100%);
-  width: 190px;
-  height: 254px;
-  padding: 0.9px;
-  border-radius: 0.7rem;
-  overflow: visible;
-  /* background: #f7ba2b; */
-  background: var(--gradient);
-  position: relative;
-  z-index: 1;
-}
-
-.card::after {
-  position: absolute;
-  content: "";
-  top: -22px;
-  left: 0px;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  transform: scale(0.76);
-  filter: blur(34.5px);
-  /* background: #f7ba2b; */
-  background: var(--gradient);
-  transition: opacity 0.5s;
-}
-
-.card-info {
-  --color: #1f1a1d;
-  background: var(--background);
-  color: var(--background);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  border-radius: 0.7rem;
-}
-
-.card .title {
-  font-weight: light;
-  letter-spacing: 0.2em;
-}
-
-/*Hover*/
-.card:hover::after {
-  opacity: 0.6;
-  padding: 0.7rem 0;
-  top: 18px;
-  transition: 0.6s;
-}
-
-.card:hover .card-info {
-  color: var(--black);
-  transition: color 1s;
+.top {
+  margin-bottom: 5em;
 }
 
 .topTitle {
     text-align: center;
 }
 
-.cardWrapper {
+.topCardWrapper {
     display: flex;
     justify-content: center;
     gap: 1em;
+}
+
+.topCard {
+  width: 25em;
+  aspect-ratio: 3/4;
+  background: var(--white);
+  border-radius: 1em;
+  border: red 1px solid;
+  position: relative;
+}
+
+.topCardInfo {
+  padding: 1.5em 1.8em;
+  font-size: 1.25rem;
+}
+
+.topCardImg {
+  width: 100%;
+  aspect-ratio: 6/5;
+  border-radius: 1em;
+}
+
+.topCartButton {
+  position: absolute;
+  left: 1.8em;
+  /* transform: translateX(-50%); */
+  bottom: 1.5em;
 }

@@ -24,22 +24,17 @@ headerFunc();
         <div class="topTitle">
             <h2>Our top bought products</h2>
         </div>
-        <div class="cardWrapper">
-            <div class="card">
-                <div class="card-info">
-                    <p class="title">Product one</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-info">
-                    <p class="title">Product two</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-info">
-                    <p class="title">Product three</p>
+        <div class="topCardWrapper">
+            <div class="topCard cardShadow">
+                <img src="./assets/placeholderCards.png" alt="Placeholder" class="topCardImg">
+                <div class="topCardInfo">
+                    <h2 class="topCartTitle">Product one</h2>
+                    <p>Description</p>
+                    <div>
+                        <button class="btnPrimary topCartButton">Order now!</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</main>
+</main>  
