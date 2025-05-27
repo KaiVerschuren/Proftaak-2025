@@ -1,5 +1,6 @@
 @import url("normalize.css");
 @import url("style.css");
+@import url("../inc/css/index.css");
 @import url("components/header.css");
 @import url("components/homepage.css");
 @import url("components/top.css");
