@@ -1,0 +1,4 @@
+footer {
+    text-align: center;
+    color: oklch(from var(--black-soft) calc(l + 0.2) c h);
+}

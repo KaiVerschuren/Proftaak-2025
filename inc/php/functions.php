@@ -44,4 +44,14 @@ function headerFunc()
 <?php
 }
 
+function footerFunc() 
+{
+?>
+    <footer>
+        <p>~ GoodieMaticAa ~</p>
+        <p>&copy; 2025</p>
+    </footer>
+<?php
+}
+
 ?>
