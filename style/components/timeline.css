@@ -1,3 +1,7 @@
+.timeline {
+    margin-bottom: 5em;
+}
+
 .timelineTitle {
     /* text-align: center; */
     font-size: 3rem;
@@ -32,6 +36,9 @@
     border-radius: 1em;
     transform: translateX(-2em);
     background: oklch(from var(--secondary) calc(l + 0.2 ) c h / calc(alpha - 0.1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .timelineTileContent {
@@ -50,4 +57,5 @@
 
 .timelineIconText {
     font-size: 1.5rem;
+    font-weight: 900;
 }

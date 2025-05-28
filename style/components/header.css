@@ -25,6 +25,9 @@ header > * {
 
 .headerLink:hover {
   transition: 0.3s ease;
+}
+
+.linkSelected {
   color: var(--primary);
 }
 

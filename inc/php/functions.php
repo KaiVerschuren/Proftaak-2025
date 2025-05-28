@@ -2,6 +2,8 @@
 
 function head($page)
 {
+global $currentPage;
+$currentPage = $page;
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -20,6 +22,7 @@ function head($page)
 
 function headerFunc()
 {
+global $currentPage;
 ?>
     <header class="container">
         <div class="headerTitle titlePrimary">
@@ -27,9 +30,9 @@ function headerFunc()
         </div>
         <nav>
             <ul class="noStyleUL headerLinks">
-                <li><a href="index.php" class="headerLink">Home</a></li>
-                <li><a href="about.php" class="headerLink">About</a></li>
-                <li><a href="contact.php" class="headerLink">Contact</a></li>
+                <li><a href="index.php" class="headerLink <?php if ($currentPage == "Homepage") echo "linkSelected"; ?>">Home</a></li>
+                <li><a href="about.php" class="headerLink <?php if ($currentPage == "About") echo "linkSelected"; ?>">About</a></li>
+                <li><a href="order.php" class="headerLink <?php if ($currentPage == "Order") echo "linkSelected"; ?>">Order</a></li>
             </ul>
         </nav>
         <div class="headerCallToAction">

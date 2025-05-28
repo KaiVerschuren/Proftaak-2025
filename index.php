@@ -58,29 +58,61 @@ headerFunc();
         <h1 class="timelineTitle">How it works</h1>
         <div class="timelineTileWrapper">
             <div class="timelineIcon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-                </svg>
-            </div>
-            <div class="timelineTile">
-                <div class="timelineTileContent">
-                    <h2 class="timelineTileTitle">Scan QR code</h2>
-                    <span class="timelineSubtitle">Step 1</span>
-                    <p class="timelineInfo">Scan the qr code by doing this and this</p>
-                </div>
-                <div class="timelinePath"></div>
-            </div>
-            <div class="timelineIcon">
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-                </svg> -->
                 <span class="timelineIconText">1</span>
             </div>
             <div class="timelineTile">
                 <div class="timelineTileContent">
-                    <h2 class="timelineTileTitle">BUY MONSTERRR</h2>
+                    <h2 class="timelineTileTitle">Scan QR Code</h2>
                     <span class="timelineSubtitle">Step 1</span>
-                    <p class="timelineInfo">MONSTERREERERE</p>
+                    <p class="timelineInfo">Open your phone camera or scanner app and scan the QR code shown on the vending machine.</p>
+                </div>
+                <div class="timelinePath"></div>
+            </div>
+
+            <div class="timelineIcon">
+                <span class="timelineIconText">2</span>
+            </div>
+            <div class="timelineTile">
+                <div class="timelineTileContent">
+                    <h2 class="timelineTileTitle">Choose Your Items</h2>
+                    <span class="timelineSubtitle">Step 2</span>
+                    <p class="timelineInfo">Browse the available items on your phone and select what you want to order.</p>
+                </div>
+                <div class="timelinePath"></div>
+            </div>
+
+            <div class="timelineIcon">
+                <span class="timelineIconText">3</span>
+            </div>
+            <div class="timelineTile">
+                <div class="timelineTileContent">
+                    <h2 class="timelineTileTitle">Use Voucher</h2>
+                    <span class="timelineSubtitle">Step 3</span>
+                    <p class="timelineInfo">If you have a voucher code, enter it during checkout to apply your balance.</p>
+                </div>
+                <div class="timelinePath"></div>
+            </div>
+
+            <div class="timelineIcon">
+                <span class="timelineIconText">4</span>
+            </div>
+            <div class="timelineTile">
+                <div class="timelineTileContent">
+                    <h2 class="timelineTileTitle">Place Order</h2>
+                    <span class="timelineSubtitle">Step 4</span>
+                    <p class="timelineInfo">Confirm your selection and complete the order through the app or web interface.</p>
+                </div>
+                <div class="timelinePath"></div>
+            </div>
+
+            <div class="timelineIcon">
+                <span class="timelineIconText">5</span>
+            </div>
+            <div class="timelineTile">
+                <div class="timelineTileContent">
+                    <h2 class="timelineTileTitle">Receive Your Item</h2>
+                    <span class="timelineSubtitle">Step 5</span>
+                    <p class="timelineInfo">Wait a moment as the machine prepares your order. Pick it up from the tray once it’s delivered.</p>
                 </div>
                 <div class="timelinePath"></div>
             </div>
