@@ -1,27 +1,100 @@
-.category {
-    border-radius: 1px solid red;
-    display: none;
+.orderWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
-.selectedCategory {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.categoryWrapper {
+  display: flex;
+}
+
+.category {
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .categoryOption {
-    flex: 1 0 33.33%;
-    width: 12em;
-    aspect-ratio: 1/1;
-    border: 1px solid red;
+  /* flex: 1 0 33.33%; */
+  width: 15em;
+  aspect-ratio: 1/1;
+  border: 1px solid red;
 }
 
 .orderButtonWrapper {
-    display: flex;
-    gap: 1em;
+  display: flex;
+  gap: 1em;
 }
 
 .orderPageButton {
-    font-family: "Roboto Mono", monospace;
-    font-weight: 700;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+}
+
+.fadeOutLeft {
+  animation: optionsFadeOutLeft 2s forwards;
+}
+
+.fadeInLeft {
+  display: flex;
+  animation: optionsFadeInLeft 2s forwards;
+}
+
+.fadeOutRight {
+  animation: optionsFadeOutRight 2s forwards;
+}
+
+.fadeInRight {
+  display: flex;
+  animation: optionsFadeInRight 2s forwards;
+}
+
+@keyframes optionsFadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes optionsFadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes optionsFadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes optionsFadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

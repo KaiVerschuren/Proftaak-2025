@@ -11,30 +11,32 @@ head("Order");
 headerFunc();
 ?>
 <main class="container">
-    <div>
-        <div class="category selectedCategory">
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-        </div>
-        <div class="category">
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-        </div>
-        <div class="category">
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
-            <div class="categoryOption"></div>
+    <div class="orderWrapper">
+        <div class="categoryWrapper">
+            <div class="category">
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+            </div>
+            <div class="category">
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+            </div>
+            <div class="category">
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+                <div class="categoryOption"></div>
+            </div>
         </div>
         <div class="orderButtonWrapper">
             <button class="btnSecondary">
@@ -51,7 +53,6 @@ headerFunc();
                     stroke="currentColor" class="btnIcon">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
-
             </button>
         </div>
     </div>
