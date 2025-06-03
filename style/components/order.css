@@ -1,35 +1,58 @@
-.orderWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
 .categoryWrapper {
   display: flex;
+  overflow: hidden;
+  padding: 5em 0;
 }
 
 .category {
-  border: 1px solid rgba(255, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 5em;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 0 0 auto;
+  width: 100%;
+  transition: 2s ease-in-out;
 }
 
 .categoryOption {
-  /* flex: 1 0 33.33%; */
   width: 15em;
-  aspect-ratio: 1/1;
-  border: 1px solid red;
+  aspect-ratio: 11/12;
+  background-color: var(--white);
+  border-radius: 1em;
+  transition: ease 0.3s;
+}
+
+.categoryOption:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 40px 50px -35px oklch(from var(--black) l c h /
+        calc(alpha - 0.5));
+}
+
+.categoryOptionImage {
+  width: 15em;
+  aspect-ratio: 12/8;
+  border-radius: 1em 1em 0 0;
+}
+
+.categoryInfo {
+  font-size: 0.8em;
+  padding: 0.8rem 1rem;
+}
+
+.categoryOptionTitle {
+  font-weight: 900;
+  margin: 0;
+}
+
+.categoryOptionInfo {
+  color: oklch(from var(--black-soft) calc(l + 0.1) c h);
 }
 
 .orderButtonWrapper {
   display: flex;
+  justify-content: center;
   gap: 1em;
+  margin-bottom: 5em;
 }
 
 .orderPageButton {
@@ -37,64 +60,12 @@
   font-weight: 700;
 }
 
-.fadeOutLeft {
-  animation: optionsFadeOutLeft 2s forwards;
+.orderCategoryOne {
+  transform: translateX(0%);
 }
-
-.fadeInLeft {
-  display: flex;
-  animation: optionsFadeInLeft 2s forwards;
+.orderCategoryTwo {
+  transform: translateX(-100%);
 }
-
-.fadeOutRight {
-  animation: optionsFadeOutRight 2s forwards;
-}
-
-.fadeInRight {
-  display: flex;
-  animation: optionsFadeInRight 2s forwards;
-}
-
-@keyframes optionsFadeOutLeft {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes optionsFadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes optionsFadeOutRight {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-}
-
-@keyframes optionsFadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.orderCategoryThree {
+  transform: translateX(-200%);
 }
