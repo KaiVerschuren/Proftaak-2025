@@ -14,7 +14,11 @@ headerFunc();
                 Welcome to <span class="titleSecondary">GoodieMaticAa</span>
             </h1>
             <p class="heroParagraph">Easily order snacks from our school vending machine,<br /> right from this website!</p>
+<<<<<<< Updated upstream
             <button class="btn">Order now!</button>
+=======
+            <button class="btnSecondary" onclick="window.location.href = 'order.php'">Order now!</button>
+>>>>>>> Stashed changes
         </div>
         <div>
             <img src="./assets/vendingMachineIllustration.png" alt="Vending machine illustration" class="heroImg">
