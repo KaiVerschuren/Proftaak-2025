@@ -3,8 +3,10 @@
 @import url("components/header.css");
 @import url("components/footer.css");
 @import url("components/homepage.css");
-@import url("components/top.css"); 
-@import url("components/timeline.css"); 
+@import url("components/top.css");
+@import url("components/timeline.css");
+@import url("components/authenticate.css");
+@import url("components/order.css");
 
 .btnPrimary {
   display: flex;
@@ -47,9 +49,10 @@
   border-radius: 6px;
   border: none;
   outline: none;
-  box-shadow: 0 10px 20px oklch(from var(--secondary) l c h / calc(alpha - 0.5)),
-    0 6px 6px oklch(from var(--secondary) l c h / calc(alpha - 0.5)),
-    0 0 100px -10px var(--secondary);
+  cursor: pointer;
+  box-shadow: 0 10px 20px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
+    0 6px 6px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
+    0 0 100px -10px var(--primary);
   transition: 0.3s ease;
 }
 
@@ -79,7 +82,13 @@
 }
 
 .accentShadow {
-  box-shadow: 0 5px 15px oklch(from var(--black) l c h / calc(alpha - 0.4)), 0 0 20px oklch(from var(--black) l c h / calc(alpha - 0.5));
+  box-shadow: 0 5px 15px oklch(from var(--black) l c h / calc(alpha - 0.4)),
+    0 0 20px oklch(from var(--black) l c h / calc(alpha - 0.5));
+}
+
+.cardShadow {
+  box-shadow: 0px 35px 75px -50px oklch(from var(--black) l c h /
+        calc(alpha - 0.25));
 }
 
 .cardShadow {
@@ -127,6 +136,7 @@
   opacity: 1;
   transform: translateX(0);
 }
+
 
 .container {
   width: 100%;

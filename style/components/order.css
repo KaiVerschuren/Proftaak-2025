@@ -1,0 +1,27 @@
+.category {
+    border-radius: 1px solid red;
+    display: none;
+}
+
+.selectedCategory {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.categoryOption {
+    flex: 1 0 33.33%;
+    width: 12em;
+    aspect-ratio: 1/1;
+    border: 1px solid red;
+}
+
+.orderButtonWrapper {
+    display: flex;
+    gap: 1em;
+}
+
+.orderPageButton {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+}

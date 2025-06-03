@@ -1,0 +1,40 @@
+.authenticate {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.authenticateForm {
+    width: 25em;
+    padding: 1.2em 1.5em;
+}
+
+.authInput {
+  width: 100%;
+  height: 1.5rem;
+  background-color: oklch(from var(--white) calc(l - 0.05) c h);
+  border-radius: .5rem;
+  padding: 1.2rem 1.5rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: .3s cubic-bezier(.25,.01,.25,1) 0s;
+  margin-bottom: 1em;
+}
+
+.authLabel {
+  display: block;
+  margin-bottom: .3rem;
+  font-size: .9rem;
+  font-weight: bold;
+  color: var(--black-soft);
+  transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.authInput:hover, .authInput:focus, .input-group:hover .authInput {
+  outline: none;
+  border-color: var(--black);
+}
+
+.input-group:hover .label, .input:focus {
+  color: var(--black);
+}
