@@ -3,37 +3,9 @@
 @import url("components/header.css");
 @import url("components/homepage.css");
 @import url("components/top.css");
-<<<<<<< Updated upstream
-
-.btn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: -0.05em;
-  background-color: var(--secondary);
-  color: var(--black);
-  padding: 0.5em 1em;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-  box-shadow: 0 10px 20px rgba(0, 153, 102, 0.5), 0 6px 6px rgba(0, 153, 102, 0.5), 0 0 100px -10px var(--secondary);
-  transition: 0.3s ease;
-  z-index: 10;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 18px rgba(0, 153, 102, 0.5), 0 10px 10px rgba(0, 153, 102, 0.5), 0 0 120px -10px var(--secondary);
-  color: var(--white);
-}
-=======
 @import url("components/timeline.css");
 @import url("components/authenticate.css");
 @import url("components/order.css");
->>>>>>> Stashed changes
 
 .btnPrimary {
   display: flex;
@@ -49,14 +21,10 @@
   border-radius: 6px;
   border: none;
   outline: none;
-<<<<<<< Updated upstream
-  box-shadow: 0 10px 20px rgba(253, 154, 0, 0.5), 0 6px 6px rgba(253, 154, 0, 0.5), 0 0 100px -10px var(--primary);
-=======
   cursor: pointer;
   box-shadow: 0 10px 20px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
     0 6px 6px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
     0 0 100px -10px var(--primary);
->>>>>>> Stashed changes
   transition: 0.3s ease;
   z-index: 10;
 }
@@ -103,13 +71,6 @@
 }
 
 .accentShadow {
-<<<<<<< Updated upstream
-  box-shadow: 0 5px 15px rgba(15, 18, 35, .6), 0 0 20px rgba(15, 18, 35, .5);
-}
-
-.cardShadow {
-  box-shadow: 0px 39px 77px -50px rgba(15, 18, 35, .5);
-=======
   box-shadow: 0 5px 15px oklch(from var(--black) l c h / calc(alpha - 0.4)),
     0 0 20px oklch(from var(--black) l c h / calc(alpha - 0.5));
 }
@@ -117,7 +78,6 @@
 .cardShadow {
   box-shadow: 0px 35px 75px -50px oklch(from var(--black) l c h /
         calc(alpha - 0.25));
->>>>>>> Stashed changes
 }
 
 .input {
