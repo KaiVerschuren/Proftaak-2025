@@ -69,6 +69,7 @@ function footerFunc()
         <p>&copy; 2025</p>
     </footer>
     <script defer src="inc/js/footer.js"></script>
+    <script defer src="inc/js/order.js"></script>
     <?php
 }
 ?>
