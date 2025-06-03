@@ -1,7 +1,6 @@
 <?php
 include 'inc/php/functions.php';
 
-
 session_start();
 
 session_destroy();

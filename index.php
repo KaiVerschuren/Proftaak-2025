@@ -21,20 +21,104 @@ headerFunc();
         </div>
     </div>
     <div class="top">
-        <div class="topTitle">
-            <h2>Our top bought products</h2>
+        <div>
+            <h1 class="topTitle">Our <span class="titlePrimary">top bought</span> products</h2>
         </div>
         <div class="topCardWrapper">
             <div class="topCard cardShadow">
-                <img src="./assets/placeholderCards.png" alt="Placeholder" class="topCardImg">
+                <img src="./assets/placeholderCards.png" class="topCardImg">
                 <div class="topCardInfo">
-                    <h2 class="topCartTitle">Product one</h2>
-                    <p>Description</p>
-                    <div>
-                        <button class="btnPrimary topCartButton">Order now!</button>
-                    </div>
+                    <h2 class="topCardTitle">SmoothWrite Pen</h2>
+                    <p class="topCartText">Reliable ballpoint pen with smooth ink flow. Perfect for daily notes or doodles.</p>
+                    <button class="btnPrimary topCardButton">Order now!</button>
                 </div>
+            </div>
+
+            <div class="topCard cardShadow">
+                <img src="./assets/placeholderCards.png" alt="3D Printed AA Statue" class="topCardImg">
+                <div class="topCardInfo">
+                    <h2 class="topCardTitle">AA 3D Print</h2>
+                    <p class="topCartText">Colored 3D-printed "AA" statue. Great for desk decoration or branding props.</p>
+                    <button class="btnPrimary topCardButton">Order now!</button>
+                </div>
+            </div>
+
+            <div class="topCard cardShadow">
+                <img src="./assets/placeholderCards.png" alt="White Monster Can" class="topCardImg">
+                <div class="topCardInfo">
+                    <h2 class="topCardTitle">Monster Ultra</h2>
+                    <p class="topCartText">Crisp white Monster energy drink. Zero sugar, full energy. Stay sharp!</p>
+                    <button class="btnPrimary topCardButton">Order now!</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="timeline">
+        <h1 class="timelineTitle">How it works</h1>
+        <div class="timelineTileWrapper">
+            <div class="timelineIcon">
+                <span class="timelineIconText">1</span>
+            </div>
+            <div class="timelineTile">
+                <div class="timelineTileContent">
+                    <h2 class="timelineTileTitle">Scan QR Code</h2>
+                    <span class="timelineSubtitle">Step 1</span>
+                    <p class="timelineInfo">Open your phone camera or scanner app and scan the QR code shown on the vending machine.</p>
+                </div>
+                <div class="timelinePath"></div>
+            </div>
+
+            <div class="timelineIcon">
+                <span class="timelineIconText">2</span>
+            </div>
+            <div class="timelineTile">
+                <div class="timelineTileContent">
+                    <h2 class="timelineTileTitle">Choose Your Items</h2>
+                    <span class="timelineSubtitle">Step 2</span>
+                    <p class="timelineInfo">Browse the available items on your phone and select what you want to order.</p>
+                </div>
+                <div class="timelinePath"></div>
+            </div>
+
+            <div class="timelineIcon">
+                <span class="timelineIconText">3</span>
+            </div>
+            <div class="timelineTile">
+                <div class="timelineTileContent">
+                    <h2 class="timelineTileTitle">Use Voucher</h2>
+                    <span class="timelineSubtitle">Step 3</span>
+                    <p class="timelineInfo">If you have a voucher code, enter it during checkout to apply your balance.</p>
+                </div>
+                <div class="timelinePath"></div>
+            </div>
+
+            <div class="timelineIcon">
+                <span class="timelineIconText">4</span>
+            </div>
+            <div class="timelineTile">
+                <div class="timelineTileContent">
+                    <h2 class="timelineTileTitle">Place Order</h2>
+                    <span class="timelineSubtitle">Step 4</span>
+                    <p class="timelineInfo">Confirm your selection and complete the order through the app or web interface.</p>
+                </div>
+                <div class="timelinePath"></div>
+            </div>
+
+            <div class="timelineIcon">
+                <span class="timelineIconText">5</span>
+            </div>
+            <div class="timelineTile">
+                <div class="timelineTileContent">
+                    <h2 class="timelineTileTitle">Receive Your Item</h2>
+                    <span class="timelineSubtitle">Step 5</span>
+                    <p class="timelineInfo">Wait a moment as the machine prepares your order. Pick it up from the tray once it’s delivered.</p>
+                </div>
+                <div class="timelinePath"></div>
             </div>
         </div>
     </div>
-</main>  
+</main>
+<?php
+footerFunc();
+?>

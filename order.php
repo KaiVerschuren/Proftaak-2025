@@ -1,6 +1,5 @@
 <?php
 include 'inc/php/functions.php';
-
 session_Start();
 
 if ($_SESSION['authenticated'] == false) {
