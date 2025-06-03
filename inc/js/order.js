@@ -1,12 +1,22 @@
 $(document).ready(function () {
   const categories = $(".category");
+  const categorySetOne = $(".setOne");
+  const categorySetTwo = $(".setTwo");
+  const categorySetThree = $(".setThree");
   const buttons = $(".orderPageButton");
   const arrowButtons = $(".orderPageButtonArrow");
 
   let currentIndex = 0;
 
+  let setOneComplete = false;
+  let setTwoComplete = false;
+  let setThreeComplete = false;
+
   function showCategory(index) {
     categories.css("transform", `translateX(-${100 * index}%)`);
+
+    buttons.removeClass("orderButtonSelected");
+    buttons.eq(index).addClass("orderButtonSelected");
   }
 
   $(buttons).on("click", function () {
@@ -23,8 +33,57 @@ $(document).ready(function () {
     if (direction == "right") {
       currentIndex = (currentIndex + 1) % 3;
     } else if (direction == "left") {
-      currentIndex = (currentIndex + 2) % 3; 
+      currentIndex = (currentIndex + 2) % 3;
     }
     showCategory(currentIndex);
   });
+
+  $(document).on("keydown", function (e) {
+    if (e.key === "ArrowRight" || e.key === "Enter") {
+      currentIndex = (currentIndex + 1) % 3;
+      showCategory(currentIndex);
+    } else if (e.key === "ArrowLeft") {
+      currentIndex = (currentIndex + 2) % 3;
+      showCategory(currentIndex);
+    }
+  });
+
+  $(".setOne").on("click", function () {
+    categorySetOne.removeClass("selectedSetOne");
+    $(this).addClass("selectedSetOne");
+    checkSelected();
+  });
+
+  $(".setTwo").on("click", function () {
+    categorySetTwo.removeClass("selectedSetTwo");
+    $(this).addClass("selectedSetTwo");
+    checkSelected();
+  });
+
+  $(".setThree").on("click", function () {
+    categorySetThree.removeClass("selectedSetThree");
+    $(this).addClass("selectedSetThree");
+    checkSelected();
+  });
+
+  function checkSelected() {
+    if ($(".setOne.selectedSetOne").length > 0) {
+      setOneComplete = true;
+      $(".orderPageButtonOne")
+        .removeClass("btnPrimary")
+        .addClass("btnSecondary");
+    }
+    if ($(".setTwo.selectedSetTwo").length > 0) {
+      setTwoComplete = true;
+      $(".orderPageButtonTwo")
+        .removeClass("btnPrimary")
+        .addClass("btnSecondary");
+    }
+    if ($(".setThree.selectedSetThree").length > 0) {
+      setThreeComplete = true;
+      $(".orderPageButtonThree")
+        .removeClass("btnPrimary")
+        .addClass("btnSecondary");
+    }
+  }
 });
