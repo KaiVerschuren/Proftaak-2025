@@ -1,16 +1,16 @@
 <?php
 include 'inc/php/functions.php';
-
 initSession();
 
-session_destroy();
-
-head("About");
+head("Playground");
 
 headerFunc();
 ?>
 <main class="container">
-
+    <h1 class="playgroundTitle">Playground</h1>
+    <?php 
+    toast();
+    ?>
 </main>
 <?php
 footerFunc();

@@ -1,13 +1,18 @@
 <?php
 include 'inc/php/functions.php';
+initSession();
 
-session_start();
-
-$authCode = "blub";
+$adminCode = "blub";
+$userCode= "user";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    if ($_POST['authCode'] == $authCode) {
+    if ($_POST['authCode'] == $adminCode) {
         $_SESSION['authenticated'] = true;
+        $_SESSION['admin'] = true;
+        header("location: order.php");
+    } else if ($_POST["authCode"] == $userCode) { 
+        $_SESSION['authenticated'] = true;
+        $_SESSION['admin'] = false;
         header("location: order.php");
     }
 }

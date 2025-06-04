@@ -1,0 +1,28 @@
+.generator {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: repeat(1, 1fr);
+  gap: 1.5em;
+  margin: 2em 0;
+  /* border: solid 1px green; */
+}
+
+.generatedCodes {
+  grid-area: 1 / 1 / 2 / 2;
+  /* border: solid 1px blue; */
+}
+.generatorControl {
+  grid-area: 1 / 2 / 2 / 3;
+  /* border: solid 1px red; */
+}
+.generatorTile {
+    background-color: var(--white);
+    padding: 1.5em;
+    border-radius: 1em;
+}
+
+.generatorFormUL > li {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}

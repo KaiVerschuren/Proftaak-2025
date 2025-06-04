@@ -1,6 +1,7 @@
 <?php
 include 'inc/php/functions.php';
 
+initSession();
 
 head("Homepage");
 
@@ -14,7 +15,7 @@ headerFunc();
                 Welcome to <span class="titleSecondary">GoodieMaticAa</span>
             </h1>
             <p class="heroParagraph">Easily order snacks from our school vending machine,<br /> right from this website!</p>
-            <button class="btnSecondary" onclick="window.location.href = 'order.php'">Order now!</button>
+            <button class="btnSecondary heroButton" onclick="window.location.href = 'order.php'">Order now!</button>
         </div>
         <div>
             <img src="./assets/vendingMachineIllustration.png" alt="Vending machine illustration" class="heroImg">
@@ -29,7 +30,7 @@ headerFunc();
                 <img src="./assets/placeholderCards.png" class="topCardImg">
                 <div class="topCardInfo">
                     <h2 class="topCardTitle">SmoothWrite Pen</h2>
-                    <p class="topCartText">Reliable ballpoint pen with smooth ink flow. Perfect for daily notes or doodles.</p>
+                    <p class="topCartText">Reliable ballpoint pen with smooth ink flow.</p>
                     <button class="btnPrimary topCardButton">Order now!</button>
                 </div>
             </div>
@@ -38,7 +39,7 @@ headerFunc();
                 <img src="./assets/placeholderCards.png" alt="3D Printed AA Statue" class="topCardImg">
                 <div class="topCardInfo">
                     <h2 class="topCardTitle">AA 3D Print</h2>
-                    <p class="topCartText">Colored 3D-printed "AA" statue. Great for desk decoration or branding props.</p>
+                    <p class="topCartText">Colored 3D-printed "AA" statue. Great for desk decoration.</p>
                     <button class="btnPrimary topCardButton">Order now!</button>
                 </div>
             </div>
