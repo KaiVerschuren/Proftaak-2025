@@ -1,0 +1,60 @@
+.toast {
+  background: var(--white);
+  width: 25em;
+  height: 4em;
+  border-radius: 1em;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  box-shadow: 0px 20px 50px -20px oklch(from var(--black) l c h /
+        calc(alpha - 0.25));
+  /* position: relative; */
+  overflow: hidden;
+}   
+
+.toastProgress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: var(--primary);
+  animation: toastTimer 5s linear forwards;
+}
+
+.toastIcon {
+  width: 2em;
+  aspect-ratio: 1/1;
+}
+
+.toastCross {
+  width: 2em;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+
+.toastIconWrapper,
+.toastCrossWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toastContentWrapper {
+  flex: 4;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+@keyframes toastTimer {
+  to {
+    width: 100%;
+  }
+}

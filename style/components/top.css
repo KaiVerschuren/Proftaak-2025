@@ -11,7 +11,9 @@
 
 .topCardWrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 1em;
 }
 
@@ -27,7 +29,8 @@
 
 .topCard:hover {
   transform: scale(1.015);
-  box-shadow: 0px 40px 50px -35px oklch(from var(--black) l c h / calc(alpha - 0.5));
+  box-shadow: 0px 40px 50px -35px oklch(from var(--black) l c h /
+        calc(alpha - 0.5));
 }
 
 .topCardInfo {
@@ -36,12 +39,12 @@
 }
 
 .topCardTitle {
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 900;
 }
 
 .topCardText {
-  font-size: 1.25rem;
+  font-size: 0.8rem;
 }
 
 .topCardImg {
@@ -53,6 +56,43 @@
 
 .topCardButton {
   position: absolute;
-  left: 1.8em;
   bottom: 1.5em;
+  left: 1.5em;
 }
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+  .topCardTitle {
+    font-size: 1.5rem;
+  }
+
+  .topCardText {
+    font-size: 1rem;
+  }
+  .topCard {
+    /* width: 25em; */
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .topCardTitle {
+    font-size: 1.8rem;
+  }
+
+  .topCardText {
+    font-size: 1.25rem;
+  }
+}
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

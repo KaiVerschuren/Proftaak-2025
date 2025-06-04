@@ -2,9 +2,9 @@
 
 function head($page)
 {
-global $currentPage;
-$currentPage = $page;
-?>
+    global $currentPage;
+    $currentPage = $page;
+    ?>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -36,14 +36,30 @@ function headerFunc()
             <div class="headerTitle titlePrimary">
                 <h1>GoodieMaticAa</h1>
             </div>
-            <nav>
+            <nav class="headerNav">
                 <ul class="noStyleUL headerLinks">
-                    <li><a href="index.php" class="headerLink <?php if ($currentPage == "Homepage")
-                        echo "linkSelected"; ?>">Home</a></li>
-                    <li><a href="about.php" class="headerLink <?php if ($currentPage == "About")
-                        echo "linkSelected"; ?>">About</a></li>
-                    <li><a href="order.php" class="headerLink <?php if ($currentPage == "Order")
-                        echo "linkSelected"; ?>">Order</a></li>
+                    <li>
+                        <a href="index.php" class="headerLink <?php if ($currentPage == "Homepage")
+                            echo "linkSelected"; ?>">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.php" class="headerLink <?php if ($currentPage == "About")
+                            echo "linkSelected"; ?>">About</a>
+                    </li>
+                    <li>
+                        <a href="order.php" class="headerLink <?php if ($currentPage == "Order")
+                            echo "linkSelected"; ?>">Order</a>
+                    </li>
+                    <?php
+                    if ($_SESSION['admin'] == true) {
+                        ?>
+                        <li>
+                            <a href="generator.php" class="headerLink <?php if ($currentPage == "Generator")
+                                echo "linkSelected"; ?>">Generator</a>
+                        </li>
+                        <?php
+                    }
+                    ?>
                 </ul>
             </nav>
             <div class="headerCallToAction">
@@ -71,5 +87,43 @@ function footerFunc()
     <script defer src="inc/js/footer.js"></script>
     <script defer src="inc/js/order.js"></script>
     <?php
+}
+
+function toast()
+{
+    ?>
+    <div class="toast">
+        <div class="toastIconWrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="toastIcon">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+            </svg>
+        </div>
+        <div class="toastContentWrapper">
+            <p>this is the content of a toast.</p>
+        </div>
+        <div class="toastCrossWrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="toastCross">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </div>
+        <div class="toastProgress"></div>
+    </div>
+    <?php
+}
+
+function initSession()
+{
+    session_start();
+
+
+    if (!isset($_SESSION["admin"])) {
+        $_SESSION["admin"] = false;
+    }
+    if (!isset($_SESSION["authenticated"])) {
+        $_SESSION["authenticated"] = false;
+    }
 }
 ?>

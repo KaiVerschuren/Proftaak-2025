@@ -1,6 +1,6 @@
 <?php
 include 'inc/php/functions.php';
-session_Start();
+initSession();
 
 if ($_SESSION['authenticated'] == false) {
     header("location: authenticate.php");
