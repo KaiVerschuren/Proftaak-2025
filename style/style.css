@@ -11,8 +11,10 @@
   --accent: oklch(20.8% 0.042 265.755);
   /*! --accent: #0f1223; BACKUP */
 
-  --yes: #22c55e;
-  --no: #b91c1c;
+  --success: oklch(72.3% 0.219 149.579);
+  --warning: oklch(76.9% 0.188 70.08);
+  --error: oklch(58.6% 0.253 17.585);
+  --info: oklch(68.5% 0.169 237.323);
 
   /*Primary rgba: 	rgba(253, 154, 0, 1) */
   /*secondary rgba: 	rgba(0, 153, 102, 1)  */

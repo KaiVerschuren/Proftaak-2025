@@ -78,21 +78,23 @@ function headerFunc()
 
 function footerFunc()
 {
+    toast();
     ?>
+        <footer class="footer">
+            <p>~ GoodieMaticAa ~</p>
+            <p>&copy; 2025</p>
+        </footer>
+        <script defer src="inc/js/footer.js"></script>
+        <script defer src="inc/js/order.js"></script>
+        <script defer src="inc/js/toast.js"></script>
     </body>
-    <footer class="footer">
-        <p>~ GoodieMaticAa ~</p>
-        <p>&copy; 2025</p>
-    </footer>
-    <script defer src="inc/js/footer.js"></script>
-    <script defer src="inc/js/order.js"></script>
     <?php
 }
 
 function toast()
 {
     ?>
-    <div class="toast">
+    <div id="toast" class="toast">
         <div class="toastIconWrapper">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                 class="toastIcon">
@@ -101,7 +103,7 @@ function toast()
             </svg>
         </div>
         <div class="toastContentWrapper">
-            <p>this is the content of a toast.</p>
+            <p class="toastContent">this is the content of a toast.</p>
         </div>
         <div class="toastCrossWrapper">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -109,8 +111,17 @@ function toast()
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
         </div>
-        <div class="toastProgress"></div>
+        <div class="toastProgress">
+            <div class="toastProgressFade"></div>
+        </div>
     </div>
+    <?php
+}
+
+function toggleToast($type, $message)
+{
+    ?>
+    <div id="toastToggled" style="display:none;" data-type="<?php echo $type ?>" data-message="<?php echo $message; ?>"></div>
     <?php
 }
 
