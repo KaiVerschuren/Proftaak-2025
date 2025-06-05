@@ -13,12 +13,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $codeAmount = isset($_POST['codeAmount']) ? intval($_POST['codeAmount']) : 1;
 
     if ($codeLength < 5 || $codeLength > 20 || $codeMaxOrders < 1 || $codeMaxOrders > 9999 || $codeAmount < 1 || $codeAmount > 100) {
-        echo "<p class='error'>Invalid input values. Please check your inputs.</p>";
+        toggleToast("error", "Invalid input values. Please check your inputs.");
     } else {
-        // Generate codes based on the input
-        // This is a placeholder for the actual code generation logic
-        echo "<p class='success'>Codes generated successfully!</p>";
+        toggleToast("success", "Codes generated successfully!");
+
+        $codes = generateCodes($codeLength, $codeType, $codeAmount);
+        
     }
+}
+
+function generateCodes($codeLength, $codeType, $codeAmount) {
+    $codes = [];
+    $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    $numbers = '0123456789';
+
+    if ($codeType == 'CharNum') {
+        $characters .= $numbers;
+    } elseif ($codeType == 'Num') {
+        $characters = $numbers;
+    } elseif ($codeType == 'Char') {
+        // Do nothing, keep $characters as is for Char
+    }
+
+    for ($i = 0; $i < $codeAmount; $i++) {
+        $code = '';
+        for ($j = 0; $j < $codeLength; $j++) {
+            $code .= $characters[rand(0, strlen($characters) - 1)];
+        }
+        $codes[] = $code;
+    }
+
+    return $codes;
 }
 
 head("Generator");
