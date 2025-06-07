@@ -78,7 +78,10 @@ function headerFunc()
 
 function footerFunc()
 {
+    // These function just output the html needed for them. JUST IN CASE you want them on the page.
+    // if you dont use them, they wont show up.
     toast();
+    tooltip();
     ?>
         <footer class="footer">
             <p>~ GoodieMaticAa ~</p>
@@ -87,6 +90,9 @@ function footerFunc()
         <script defer src="inc/js/footer.js"></script>
         <script defer src="inc/js/order.js"></script>
         <script defer src="inc/js/toast.js"></script>
+        <script defer src="inc/js/tooltip.js"></script>
+        <script defer src="inc/js/dropdown.js"></script>
+        <script defer src="inc/js/pagination.js"></script>
     </body>
     <?php
 }
@@ -115,6 +121,12 @@ function toast()
             <div class="toastProgressFade"></div>
         </div>
     </div>
+    <?php
+}
+
+function tooltip() {
+    ?>
+    <div id="tooltip" class="tooltip">toooooltip</div>
     <?php
 }
 
