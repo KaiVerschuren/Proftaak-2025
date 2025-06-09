@@ -1,7 +1,6 @@
 .generator {
-  display: grid;
-  grid-template-columns: 1fr 0.5fr;
-  grid-template-rows: repeat(1, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 1.5em;
   margin: 2em 0;
   /* border: solid 1px green; */
@@ -18,7 +17,7 @@
 }
 
 .code {
-  flex: 10;
+  flex: 7;
   font-family: "Roboto Mono", monospace;
 }
 
@@ -32,6 +31,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  gap: 0.5em;
 }
 
 .pageNumber {
@@ -149,3 +149,27 @@
   box-shadow: 0 10px 20px -10px var(--error);
   background: oklch(from var(--error) l c h / calc(alpha - 0.90));
 }
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+  .generator {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: repeat(1, 1fr);
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */
