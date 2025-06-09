@@ -6,14 +6,15 @@ header {
   padding: 1em 0;
 }
 
-header > * {
+/* header > * {
   flex: 1;
-}
+} */
 
 .headerNav {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 2;
 }
 
 .headerTitle {
@@ -21,6 +22,11 @@ header > * {
   justify-content: start;
   align-items: center;
   /* padding-left: 2em; */
+  flex: 1;
+}
+
+.headerTitle {
+  flex: 1;
 }
 
 .headerTitle > h1 {
@@ -32,6 +38,7 @@ header > * {
   gap: 1em;
   font-size: 0.8rem;
   font-weight: 900;
+  flex-wrap: wrap;
 }
 
 .headerLink:hover {
@@ -48,6 +55,7 @@ header > * {
   justify-content: end;
   /* padding-right: 2em; */
   font-size: 0.9rem;
+  flex: 1;
 }
 
 /* xs */

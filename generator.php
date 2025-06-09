@@ -1,6 +1,7 @@
 <?php
 include 'inc/php/functions.php';
 include 'inc/php/dbconnect.php';
+
 initSession();
 
 if ($_SESSION['admin'] == false) {
@@ -61,19 +62,39 @@ function generateCodes($codeLength, $codeType, $codeAmount)
     } elseif ($codeType == 'Num') {
         $characters = $numbers;
     } elseif ($codeType == 'Char') {
-        // Do nothing, keep $characters as is for Char
+        // Do nothing, keep $characters as is
     }
 
     for ($i = 0; $i < $codeAmount; $i++) {
-        $code = '';
-        for ($j = 0; $j < $codeLength; $j++) {
-            $code .= $characters[rand(0, strlen($characters) - 1)];
+        if ($codeType == 'simple') {
+            $contents = file_get_contents('inc/json/words.json');
+            $words = json_decode($contents);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                toggleToast("error", "Failed to decode words.json. Please check the file.");
+                return [];
+            }
+
+            $word = $words[array_rand($words)];
+            $word = substr($word, 0, $codeLength);
+
+            // If the word is too short, pad with random numbers
+            while (strlen($word) < $codeLength) {
+                $word .= $numbers[rand(0, strlen($numbers) - 1)];
+            }
+
+            $codes[] = $word;
+        } else {
+            $code = '';
+            for ($j = 0; $j < $codeLength; $j++) {
+                $code .= $characters[rand(0, strlen($characters) - 1)];
+            }
+            $codes[] = $code;
         }
-        $codes[] = $code;
     }
 
     return $codes;
 }
+
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $codeId = $_POST['codeId'] ?? null;
@@ -123,7 +144,7 @@ headerFunc();
                             </svg>
                             <div class="codesDropdown" data-num="<?php echo $code['id']; ?>">
                                 <form method="post">
-                                    <input type="submit" class="codesDropdownButton" value="Copy" name="copy">
+                                    <input type="submit" data-num="<?php echo $code['id']; ?>" class="codesDropdownButton" value="Copy" name="copy">
                                     <input type="submit" class="codesDropdownButton" value="Renew" name="renew">
                                     <input type="submit" class="codesDropdownButton" value="delete" name="delete"> <!-- name lowercase to match -->
                                     <input type="hidden" name="codeId" value="<?php echo $code['id']; ?>">

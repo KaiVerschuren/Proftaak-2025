@@ -9,6 +9,9 @@ function adjustFooter() {
   }
 }
 
-// Run on page load and resize
-$(document).ready(adjustFooter);
+$(document).ready(function() {
+  setTimeout(function() {
+    adjustFooter();
+  }, 150);
+});
 $(window).on("resize", adjustFooter);
