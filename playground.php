@@ -13,6 +13,17 @@ headerFunc();
     <button onclick="showToast('error', 'this is an error toast');" class="btnPrimary">Toast error</button>
     <button onclick="showToast('info', 'this is an info toast');" class="btnPrimary">Toast info</button>
     <button onclick="showToast('warning', 'this is a warning toast, this is a warning toast, this is a warning toast');" class="btnPrimary">Toast warning</button>
+      <button onclick="blinkLED()" class="btnPrimary">Dispense 11</button>
+      <button onclick="blinkLED()" class="btnPrimary">Dispense 24</button>
+      <button onclick="blinkLED()" class="btnPrimary">Dispense 54</button>
+
+  <script>
+    function blinkLED() {
+      fetch('send.php')
+        .then(response => response.text())
+        .then(data => alert(data));
+    }
+  </script>
 </main>
 <?php
 footerFunc();
