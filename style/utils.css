@@ -11,6 +11,7 @@
 @import url("components/playground.css");
 @import url("components/toast.css");
 @import url("components/tooltip.css");
+@import url("components/experimental.css");
 
 .btnPrimary {
   display: flex;

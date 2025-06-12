@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['generate'])) {
     $codeMaxOrders = isset($_POST['codeMaxOrders']) ? intval($_POST['codeMaxOrders']) : 1;
     $codeAmount = isset($_POST['codeAmount']) ? intval($_POST['codeAmount']) : 1;
 
-    if ($codeLength < 5 || $codeLength > 20 || $codeMaxOrders < 1 || $codeMaxOrders > 9999 || $codeAmount < 1 || $codeAmount > 100) {
+    if ($codeLength < 6 || $codeLength > 20 || $codeMaxOrders < 1 || $codeMaxOrders > 9999 || $codeAmount < 1 || $codeAmount > 100) {
         toggleToast("error", "Invalid input values. Please check your inputs.");
     } else {
         toggleToast("success", "Codes generated successfully!");
@@ -57,12 +57,13 @@ function generateCodes($codeLength, $codeType, $codeAmount)
     $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     $numbers = '0123456789';
 
+    $existingCodes = fetchCodes();
+    $existingList = array_column($existingCodes, 'code');
+
     if ($codeType == 'CharNum') {
         $characters .= $numbers;
     } elseif ($codeType == 'Num') {
         $characters = $numbers;
-    } elseif ($codeType == 'Char') {
-        // Do nothing, keep $characters as is
     }
 
     for ($i = 0; $i < $codeAmount; $i++) {
@@ -70,16 +71,20 @@ function generateCodes($codeLength, $codeType, $codeAmount)
             $contents = file_get_contents('inc/json/words.json');
             $words = json_decode($contents);
             if (json_last_error() !== JSON_ERROR_NONE) {
-                toggleToast("error", "Failed to decode words.json. Please check the file.");
+                toggleToast("error", "Failed to decode 5 letter words.");
                 return [];
             }
 
             $word = $words[array_rand($words)];
             $word = substr($word, 0, $codeLength);
 
-            // If the word is too short, pad with random numbers
             while (strlen($word) < $codeLength) {
                 $word .= $numbers[rand(0, strlen($numbers) - 1)];
+            }
+
+            if (in_array($word, $existingList) || in_array($word, $codes)) {
+                $i--; // retry this iteration
+                continue;
             }
 
             $codes[] = $word;
@@ -88,11 +93,34 @@ function generateCodes($codeLength, $codeType, $codeAmount)
             for ($j = 0; $j < $codeLength; $j++) {
                 $code .= $characters[rand(0, strlen($characters) - 1)];
             }
+
+            if (in_array($code, $existingList) || in_array($code, $codes)) {
+                $i--; // retry this iteration
+                continue;
+            }
+
             $codes[] = $code;
         }
     }
 
     return $codes;
+}
+
+
+/**
+ * Generates an array of codes based on parameters.
+ * @param string $code The code to check.
+ * @param array $existingCodes Array of existing codes to check against.
+ * 
+ * @return bool
+ */
+function checkExisting($code, $existingCodes) {
+    foreach ($existingCodes as $item) {
+        if ($item['code'] === $code) {
+            return true;
+        }
+    }
+    return false;
 }
 
 
@@ -107,10 +135,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['delete']) && $codeId) {
         deleteCode($codeId);
         toggleToast("success", "Code with ID {$codeId} has been deleted.");
-    }
-
-    if (isset($_POST['copy'])) {
-        // handle copy in js
     }
 }
 
@@ -143,10 +167,11 @@ headerFunc();
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                             <div class="codesDropdown" data-num="<?php echo $code['id']; ?>">
+                                <!-- button outside form to prevent it from reloading the page -->
+                                <button class="codesDropdownButtonCopy" onclick="copyToClipboard('<?php echo $code['code']; ?>')">Copy</button>
                                 <form method="post">
-                                    <input type="submit" data-num="<?php echo $code['id']; ?>" class="codesDropdownButton" value="Copy" name="copy">
                                     <input type="submit" class="codesDropdownButton" value="Renew" name="renew">
-                                    <input type="submit" class="codesDropdownButton" value="delete" name="delete"> <!-- name lowercase to match -->
+                                    <input type="submit" class="codesDropdownButton" value="Delete" name="delete">
                                     <input type="hidden" name="codeId" value="<?php echo $code['id']; ?>">
                                 </form>
 
@@ -188,8 +213,8 @@ headerFunc();
             <form method="post">
                 <ul class="generatorFormUL noStyleUL">
                     <li>
-                        <label data-tooltip="Minimum 5 characters, maximum 20 characters." for="codeLength">Code length:</label>
-                        <input class="input removeArrow" name="codeLength" type="number" min="5" max="20">
+                        <label data-tooltip="Minimum 6 characters, maximum 20 characters." for="codeLength">Code length:</label>
+                        <input class="input removeArrow" name="codeLength" type="number" min="6" max="20">
                     </li>
                     <li>
                         <label data-tooltip="Choose the type of codes you want to generate." for="codeType">Code type:</label>
