@@ -16,6 +16,7 @@ headerFunc();
       <button onclick="blinkLED()" class="btnPrimary">Dispense 11</button>
       <button onclick="blinkLED()" class="btnPrimary">Dispense 24</button>
       <button onclick="blinkLED()" class="btnPrimary">Dispense 54</button>
+       <button onclick="blinkLED()" class="btnPrimary">Dispense 14</button>
 
   <script>
     function blinkLED() {
