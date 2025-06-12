@@ -6,6 +6,7 @@ initSession();
 head("Homepage");
 
 headerFunc();
+
 ?>
 
 <main class="container">

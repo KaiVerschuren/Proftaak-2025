@@ -1,3 +1,3 @@
-function copyToClipboard() {
-    
-}
+function copyToClipboard(code) {
+  navigator.clipboard.writeText(code);
+}  

@@ -93,6 +93,7 @@ function footerFunc()
         <script defer src="inc/js/tooltip.js"></script>
         <script defer src="inc/js/dropdown.js"></script>
         <script defer src="inc/js/pagination.js"></script>
+        <script defer src="inc/js/copy.js"></script>
     </body>
     <?php
 }

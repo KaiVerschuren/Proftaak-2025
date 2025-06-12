@@ -56,7 +56,7 @@ function sendCodes($code, $maxOrders)
 
 /**
  * Fetches codes from database.
- * @return array Array with fetched codes, OR empty if none.
+ * @return array | bool Array with fetched codes, OR empty if none.
  */
 function fetchCodes()
 {
