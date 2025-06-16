@@ -1,7 +1,7 @@
 .categoryWrapper {
   display: flex;
   overflow: hidden;
-  padding: 5em 0;
+  padding: 3em 0;
 }
 
 .category {
@@ -53,7 +53,7 @@
   display: flex;
   justify-content: center;
   gap: 1em;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
 }
 
 .orderPageButton {
@@ -64,6 +64,12 @@
 
 .orderButtonSelected {
   border: solid 2px var(--black) !important;
+}
+
+.orderForm {
+  margin-bottom: 5em;
+  display: flex;
+  justify-content: center;
 }
 
 .selectedSetOne,
@@ -89,7 +95,7 @@
     font-size: 0.8rem;
   }
   .categoryOptionTitle {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -106,7 +112,7 @@
     font-size: 1rem;
   }
   .categoryOptionTitle {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 }
 

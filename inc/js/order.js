@@ -85,5 +85,11 @@ $(document).ready(function () {
         .removeClass("btnPrimary")
         .addClass("btnSecondary");
     }
+    if (setOneComplete && setTwoComplete && setThreeComplete) {
+      $(".orderForm").show();
+      requestAnimationFrame(() => {
+        requestAnimationFrame(adjustFooter);
+      });
+    }
   }
 });
