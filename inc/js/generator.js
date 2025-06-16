@@ -27,3 +27,15 @@ $('.dropdownIcon, .codesDropdown').on('mouseleave', function() {
     $(`.codesDropdown[data-num="${num}"]`).removeClass('dropdownShow');
   }, 100);
 });
+
+$('#codeType').on('change', function() { 
+  if ($(this).val() !== 'simple') {
+    $('#generatorCheckbox').prop('checked', false);
+  }
+})
+
+$('#generatorCheckbox').on('change', function() { 
+  if ($(this).prop('checked') && $('#codeType').val() !== 'simple') {
+    $('#codeType').val('simple');
+  }
+})
