@@ -18,13 +18,18 @@ headerFunc();
       <button onclick="blinkLED()" class="btnPrimary">Dispense 54</button>
        <button onclick="blinkLED()" class="btnPrimary">Dispense 14</button>
 
-  <script>
-    function blinkLED() {
-      fetch('send.php')
-        .then(response => response.text())
-        .then(data => alert(data));
-    }
-  </script>
+  <input type="number" id="slotNumber" placeholder="Enter slot number">
+<button onclick="sendSlot()">Send Slot</button>
+
+<script>
+  function sendSlot() {
+    const slot = document.getElementById("slotNumber").value;
+
+    fetch('send.php?slot=' + slot)
+      .then(response => response.text())
+      .then(data => alert(data));
+  }
+</script>
 </main>
 <?php
 footerFunc();
