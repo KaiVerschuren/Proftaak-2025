@@ -4,14 +4,12 @@ include 'inc/php/dbconnect.php';
 
 initSession();
 
-$adminCode = "123admin";
-
 $codes = fetchCodes();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $authCode = $_POST['authCode'];
     foreach ($codes as $code) {
-        if ($code['code'] == $authCode) {
+        if ($code['code'] == $authCode && $authCode != "admin321" && $authCode != "goodie-admin321") {
             $_SESSION['authenticated'] = true;
 
             // check if the auth code is a code for a goodiebag
@@ -27,9 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $_SESSION['setCodeId'] = $code['id'];
             $_SESSION['setCodeUses'] = $code['orders'];
             $_SESSION['setCodeMaxUses'] = $code['maxOrders'];
+            $_SESSION['admin'] = false;
             header("location: order.php");
             exit();
-        } else if ($authCode == $adminCode) {
+        } 
+        else {
+            toggleToast("error", "Authentication failed. Code " . $authCode . " not found.");
+            $_SESSION['authenticated'] = false;
+        }
+        if ($authCode == "admin321") {
             $_SESSION['authenticated'] = true;
             $_SESSION['admin'] = true;
             $_SESSION['goodieCode'] = false;
@@ -38,9 +42,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             header("location: generator.php");
             exit();
         }
-        else {
-            toggleToast("error", "Authentication failed. Code " . $authCode . " not found.");
-            $_SESSION['authenticated'] = false;
+        if ($authCode == "goodie-admin321") {
+            $_SESSION['authenticated'] = true;
+            $_SESSION['admin'] = true;
+            $_SESSION['goodieCode'] = true;
+            $_SESSION['setCode'] = $authCode;
+
+            header("location: generator.php");
+            exit();
         }
     }
 }
