@@ -1,8 +1,3 @@
-<!-- change the layout of this file so that it only runs if $_SESSIOn['goodieCode'] == true. --
-otherwise, leave empty for me to code it. 
-
--->
-
 <?php
 include 'inc/php/functions.php';
 include 'inc/php/dbconnect.php';
@@ -14,7 +9,16 @@ if ($_SESSION['authenticated'] == false) {
 
 $goodieCode = isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true;
 
+$usesLeft = false;
+
+
 if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
+    if ($_SESSION['setCodeUses'] >= $_SESSION['setCodeMaxUses']) {
+        toggleToast("error", "This code has no uses left. you can only view products.");
+        $usesLeft = false;
+    } else {
+        $usesLeft = true;
+    }
     if (isset($_POST['productSubmit'])) {
         $productOne = $_POST['productOne'] ?? '';
         $productTwo = $_POST['productTwo'] ?? '';
@@ -28,7 +32,7 @@ if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
 
         toggleToast("success", "Products selected: " . implode(", ", array_filter($selectedProducts)));
 
-        
+        addUse($_SESSION['setCodeId']);
     }
 
     $setOne = getSetOne();
@@ -127,7 +131,7 @@ headerFunc();
         <?php
         }
         ?>
-        <input name="productSubmit" type="submit" class="btnPrimary" value="Order" id="orderButton">
+        <input name="productSubmit" type="submit" class="btnPrimary" value="Order" id="orderButton" <?= $usesLeft ? '' : 'disabled' ?>>
     </form>
 
     <!-- to check if the user has a goodie code -->

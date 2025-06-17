@@ -257,3 +257,29 @@ function addUse($id) {
 
     return $result;
 }
+
+/**
+ * gets the orders data from a authcode
+ * @param int $id id of authcode
+ */
+function getUses($id) {
+    $mysqli = connectDB();
+
+    $sql = "SELECT orders, maxOrders FROM authcode WHERE id = ?";
+    $stmt = $mysqli->prepare($sql);
+
+    if (!$stmt) {
+        echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        return false;
+    }
+
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->bind_result($orders);
+    $stmt->fetch();
+
+    $stmt->close();
+    $mysqli->close();
+
+    return $orders;
+}
