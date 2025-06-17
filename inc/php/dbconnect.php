@@ -228,3 +228,32 @@ function deleteCode($id)
 
     return $products;
 }
+
+/**
+ * function to add 1 use to a code, can be used for both goodie codes and normal ones.
+ * @param int $id Id of the code to add a use to. 
+ * @return bool Result, only really important if you have errors.
+ */
+function addUse($id) {
+    $mysqli = connectDB();
+
+    $sql = "UPDATE authcode SET orders = orders + 1 WHERE id = ?";
+    $stmt = $mysqli->prepare($sql);
+
+    if (!$stmt) {
+        echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        return false;
+    }
+
+    $stmt->bind_param("i", $id);
+    $result = $stmt->execute();
+
+    if (!$result) {
+        echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+
+    $stmt->close();
+    $mysqli->close();
+
+    return $result;
+}

@@ -1,3 +1,8 @@
+<!-- change the layout of this file so that it only runs if $_SESSIOn['goodieCode'] == true. --
+otherwise, leave empty for me to code it. 
+
+-->
+
 <?php
 include 'inc/php/functions.php';
 include 'inc/php/dbconnect.php';
@@ -7,23 +12,39 @@ if ($_SESSION['authenticated'] == false) {
     header("location: authenticate.php");
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Check if the form is submitted
-    $productOne = isset($_POST['productOne']) ? $_POST['productOne'] : '';
-    $productTwo = isset($_POST['productTwo']) ? $_POST['productTwo'] : '';
-    $productThree = isset($_POST['productThree']) ? $_POST['productThree'] : '';
-}
+$goodieCode = isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true;
 
-$setOne = getSetOne();
-$setTwo = getSetTwo();
-$setThree = getSetThree();
+if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
+    if (isset($_POST['productSubmit'])) {
+        $productOne = $_POST['productOne'] ?? '';
+        $productTwo = $_POST['productTwo'] ?? '';
+        $productThree = $_POST['productThree'] ?? '';
+
+        $selectedProducts = [
+            'productOne' => $productOne,
+            'productTwo' => $productTwo,
+            'productThree' => $productThree
+        ];
+
+        toggleToast("success", "Products selected: " . implode(", ", array_filter($selectedProducts)));
+
+        
+    }
+
+    $setOne = getSetOne();
+    $setTwo = getSetTwo();
+    $setThree = getSetThree();
+}
 
 head("Order");
 
-headerFunc();
+headerFunc();   
 ?>
 <main class="container">
     <div class="categoryWrapper">
+        <?php
+        if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
+        ?>
         <div class="category">
             <?php
             foreach ($setOne as $product) {
@@ -43,7 +64,7 @@ headerFunc();
             <?php
             foreach ($setTwo as $product) {
                 ?>
-                <div class="setTwo categoryOption cardShadow">
+                <div data-position="<?php echo $product['position']; ?>" class="setTwo categoryOption cardShadow">
                     <img src="<?php echo $product['img']; ?>" alt="Placeholder" class="categoryOptionImage">
                     <div class="categoryInfo">
                         <h1 class="categoryOptionTitle"><?php echo $product['name']; ?></h1>
@@ -58,18 +79,24 @@ headerFunc();
             <?php
             foreach ($setThree as $product) {
                 ?>
-                <div class="setThree categoryOption cardShadow">
+                <div data-position="<?php echo $product['position']; ?>" class="setThree categoryOption cardShadow">
                     <img src="<?php echo $product['img']; ?>" alt="Placeholder" class="categoryOptionImage">
                     <div class="categoryInfo">
-                        <h1 class="categoryOptionTitle"><?php echo $product['name'];?></h1>
-                        <p class="categoryOptionInfo"><?php echo $product['description'];?></p>
+                        <h1 class="categoryOptionTitle"><?php echo $product['name']; ?></h1>
+                        <p class="categoryOptionInfo"><?php echo $product['description']; ?></p>
                     </div>
                 </div>
                 <?php
             }
             ?>
         </div>
+        <?php
+        }
+        ?>
     </div>
+    <?php 
+    if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
+    ?>
     <div class="orderButtonWrapper">
         <button class="btnSecondary orderPageButtonArrow">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -87,12 +114,24 @@ headerFunc();
             </svg>
         </button>
     </div>
+    <?php
+    }
+    ?>
     <form method="post" class="orderForm" style="display: none;">
         <input type="hidden" id="productOne" name="productOne" value="">
+        <?php 
+        if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
+        ?>
         <input type="hidden" id="productTwo" name="productTwo" value="">
         <input type="hidden" id="productThree" name="productThree" value="">
-        <input type="submit" class="btnPrimary" value="Order" id="orderButton">
+        <?php
+        }
+        ?>
+        <input name="productSubmit" type="submit" class="btnPrimary" value="Order" id="orderButton">
     </form>
+
+    <!-- to check if the user has a goodie code -->
+    <div data-goodie="<?php echo $goodieCode; ?>"></div>
 </main>
 <?php
 footerFunc();
