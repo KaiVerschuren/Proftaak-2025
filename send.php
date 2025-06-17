@@ -1,41 +1,35 @@
 <?php
-// send.php — sends each slot value on a new line
+// send.php
+
+if (!isset($_GET['slot'])) {
+    echo "Error: No slot parameter provided.";
+    exit;
+}
+
+$slot = $_GET['slot'];
+
+// Validate slot as numeric (optional, but recommended)
+if (!ctype_digit($slot)) {
+    echo "Error: Invalid slot number.";
+    exit;
+}
 
 $serialPort = '/dev/ttyACM0';
 
-// Check for required parameters
-if (!isset($_GET['slot1'], $_GET['slot2'], $_GET['slot3'])) {
-    echo "Error: slot1, slot2, and slot3 must all be provided.";
-    exit;
-}
-
-// Get values
-$slot1 = $_GET['slot1'];
-$slot2 = $_GET['slot2'];
-$slot3 = $_GET['slot3'];
-
-// Validate all as numeric
-if (!ctype_digit($slot1)  !ctype_digit($slot2)  !ctype_digit($slot3)) {
-    echo "Error: All slot values must be numeric.";
-    exit;
-}
-
-// Open the serial port
+// Open serial port for writing only
 $fp = fopen($serialPort, 'w');
 if (!$fp) {
     echo "Error: Cannot open serial port $serialPort";
     exit;
 }
 
-// Wait for Arduino to reset
+// Wait for Arduino to reset and initialize
 sleep(2);
 
-// Write each slot number on a separate line
-fwrite($fp, $slot1 . "\n");
-fwrite($fp, $slot2 . "\n");
-fwrite($fp, $slot3 . "\n");
+// Send the slot number followed by newline
+fwrite($fp, $slot . "\n");
 
-// Close port
+// Close the port
 fclose($fp);
 
-echo "Sent slots:\n$slot1\n$slot2\n$slot3";
+echo "Sent slot: $slot";    
