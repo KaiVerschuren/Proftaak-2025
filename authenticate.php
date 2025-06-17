@@ -22,7 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['goodieCode'] = false;
             }
 
+            getUses($code['code']);
+
             $_SESSION['setCode'] = $code['code'];
+            $_SESSION['setCodeId'] = $code['id'];
+            $_SESSION['setCodeUses'] = $code['orders'];
+            $_SESSION['setCodeMaxUses'] = $code['maxOrders'];
             header("location: order.php");
             exit();
         } else if ($authCode == $adminCode) {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 16, 2025 at 09:02 AM
+-- Generation Time: Jun 17, 2025 at 08:19 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -67,7 +67,7 @@ INSERT INTO `authcode` (`id`, `code`, `orders`, `maxOrders`) VALUES
 (444, 'zebra1', 0, 1),
 (445, 'yeast2', 0, 1),
 (446, 'alibi5', 0, 1),
-(447, 'goodie-nifty6', 0, 1),
+(447, 'goodie-nifty6', 6, 1),
 (448, 'goodie-hymen9', 0, 1);
 
 -- --------------------------------------------------------

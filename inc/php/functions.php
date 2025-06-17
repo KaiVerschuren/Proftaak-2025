@@ -96,6 +96,7 @@ function footerFunc()
         <script defer src="inc/js/pagination.js"></script>
         <script defer src="inc/js/copy.js"></script>
         <script defer src="inc/js/authenticate.js"></script>
+        <script defer src="inc/js/send.js"></script>
     </body>
     <?php
 }
@@ -159,6 +160,15 @@ function initSession()
     }
     if (!isset($_SESSION["setCode"])) {
         $_SESSION["setCode"] = "";
+    }
+    if (!isset($_SESSION["setCodeId"])) {
+        $_SESSION["setCodeId"] = 0;
+    }
+    if (!isset($_SESSION["setCodeUses"])) {
+        $_SESSION["setCodeUses"] = 0;
+    }
+    if (!isset($_SESSION["setCodeMaxUses"])) {
+        $_SESSION["setCodeMaxUses"] = 0;
     }
 }
 
