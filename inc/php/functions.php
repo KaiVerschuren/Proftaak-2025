@@ -64,6 +64,13 @@ function headerFunc()
                 </ul>
             </nav>
             <div class="headerCallToAction">
+                <?php 
+                if ($_SESSION["authenticated"] == true) {
+                    ?>
+                    <button class="btnPrimary" onclick="window.location.href='reset.php'">logout</button>
+                    <?php
+                }
+                ?>
                 <button class="btnSecondary" onclick="window.location.href = 'order.php'">
                     Order
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"

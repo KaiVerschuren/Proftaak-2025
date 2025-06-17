@@ -9,13 +9,14 @@
   min-height: 85dvh;
 }
 
-.hero > div {
+.heroText {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 0;
 }
 
-.hero > div > h1 {
+.heroText > h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   font-weight: 900;
@@ -24,6 +25,7 @@
 .heroParagraph {
   margin-bottom: 1.5em;
   font-size: 0.65rem;
+  max-width: 60ch;
 }
 
 .heroImg {
@@ -77,7 +79,11 @@
   }
 
   .heroParagraph {
-    font-size: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .heroText {
+    padding-top: 5em;
   }
 }
 
