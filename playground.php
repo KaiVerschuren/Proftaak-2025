@@ -30,6 +30,24 @@ headerFunc();
       .then(data => alert(data));
   }
 </script>
+<input type="number" id="slot1" placeholder="Slot 1"><br><br>
+  <input type="number" id="slot2" placeholder="Slot 2"><br><br>
+  <input type="number" id="slot3" placeholder="Slot 3"><br><br>
+
+  <button onclick="sendSlots()">Send</button>
+
+  <script>
+    function sendSlots() {
+      const slot1 = document.getElementById("slot1").value;
+      const slot2 = document.getElementById("slot2").value;
+      const slot3 = document.getElementById("slot3").value;
+
+      fetch(`send.php?slot1=${slot1}&slot2=${slot2}&slot3=${slot3}`)
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => alert("Error: " + error));
+    }
+  </script>
 </main>
 <?php
 footerFunc();
