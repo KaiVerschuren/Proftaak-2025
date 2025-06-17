@@ -1,6 +1,7 @@
 <?php
 include 'inc/php/functions.php';
 include 'inc/php/dbconnect.php';
+
 initSession();
 
 $adminCode = "123admin";
