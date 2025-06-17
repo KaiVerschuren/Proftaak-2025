@@ -135,10 +135,10 @@ function tooltip()
     <?php
 }
 
-function toggleToast($type, $message)
+function toggleToast($type, $message, $url = null)
 {
     ?>
-    <div id="toastToggled" style="display:none;" data-type="<?php echo $type ?>" data-message="<?php echo $message; ?>">
+    <div id="toastToggled" style="display:none;" data-type="<?php echo $type ?>" data-message="<?php echo $message; ?>" data-url="<?php echo $url; ?>">
     </div>
     <?php
 }
@@ -160,15 +160,6 @@ function initSession()
     }
     if (!isset($_SESSION["setCode"])) {
         $_SESSION["setCode"] = "";
-    }
-    if (!isset($_SESSION["setCodeId"])) {
-        $_SESSION["setCodeId"] = 0;
-    }
-    if (!isset($_SESSION["setCodeUses"])) {
-        $_SESSION["setCodeUses"] = 0;
-    }
-    if (!isset($_SESSION["setCodeMaxUses"])) {
-        $_SESSION["setCodeMaxUses"] = 0;
     }
 }
 

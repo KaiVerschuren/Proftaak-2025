@@ -1,6 +1,6 @@
 let toastTimeout;
 
-function showToast(type, message) {
+function showToast(type, message, redirectUrl = null) {
   clearTimeout(toastTimeout);
 
   $(".toast").css("display", "none");
@@ -15,10 +15,13 @@ function showToast(type, message) {
 
   $(".toastIcon").css("color", colorMap[type] || "var(--info)");
   $(".toast").css("display", "flex");
-    $(".toastContent").text(message);
+  $(".toastContent").text(message);
 
   toastTimeout = setTimeout(() => {
     $(".toast").css("display", "none");
+    if (redirectUrl) {
+      window.location.href = redirectUrl;
+    }
   }, 3000);
 }
 
@@ -32,6 +35,7 @@ $(document).ready(() => {
   if (toastDiv.length) {
     const type = toastDiv.data("type");
     const message = toastDiv.data("message");
-    showToast(type, message);
+    const url = toastDiv.data("url");
+    showToast(type, message, url);
   }
 });

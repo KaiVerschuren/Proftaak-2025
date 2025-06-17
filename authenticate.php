@@ -7,7 +7,6 @@ initSession();
 $adminCode = "123admin";
 
 $codes = fetchCodes();
-var_dump($_POST);
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $authCode = $_POST['authCode'];
@@ -22,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['goodieCode'] = false;
             }
 
-            getUses($code['code']);
+            getUses($code['id']);
 
             $_SESSION['setCode'] = $code['code'];
             $_SESSION['setCodeId'] = $code['id'];
