@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 17, 2025 at 08:19 AM
+-- Generation Time: Jun 17, 2025 at 10:11 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -39,36 +39,18 @@ CREATE TABLE `authcode` (
 --
 
 INSERT INTO `authcode` (`id`, `code`, `orders`, `maxOrders`) VALUES
-(419, 'satin5', 0, 5),
-(420, 'flora4', 0, 5),
-(421, 'peony6', 0, 5),
-(422, 'dream2', 0, 5),
-(423, 'ivory0', 0, 5),
-(424, 'honey8', 0, 5),
-(425, 'hazel9', 0, 5),
-(426, 'bloom9', 0, 5),
-(427, 'roses5', 0, 5),
-(428, 'honey5', 0, 5),
-(429, 'charm2', 0, 5),
-(430, 'hazel3', 0, 5),
-(431, 'amber8', 0, 5),
-(432, 'blush8', 0, 5),
-(433, 'shine6', 0, 5),
-(434, 'sofia1', 0, 5),
-(435, 'venus6', 0, 5),
-(436, 'gloss6', 0, 5),
-(437, 'linen6', 0, 5),
-(438, 'tulip1', 0, 5),
-(439, 'wrack1', 0, 1),
-(440, 'limbo1', 0, 1),
-(441, 'drape1', 0, 1),
-(442, 'croon6', 0, 1),
-(443, 'trace4', 0, 1),
-(444, 'zebra1', 0, 1),
-(445, 'yeast2', 0, 1),
-(446, 'alibi5', 0, 1),
-(447, 'goodie-nifty6', 6, 1),
-(448, 'goodie-hymen9', 0, 1);
+(450, 'goodie-balky0', 0, 1),
+(451, 'goodie-filmy8', 0, 1),
+(452, 'goodie-deign8', 0, 1),
+(453, 'goodie-amber4', 0, 1),
+(454, 'goodie-udder8', 0, 1),
+(455, 'torso4', 0, 1),
+(456, 'charm6', 0, 1),
+(457, 'nerdy2', 0, 1),
+(458, 'cairn6', 0, 1),
+(459, 'lodge1', 0, 1),
+(462, 'admin321', 15, 9999),
+(463, 'goodie-admin321', 1, 9999);
 
 -- --------------------------------------------------------
 
@@ -130,7 +112,13 @@ INSERT INTO `product` (`id`, `name`, `description`, `position`, `img`, `productS
 (18, 'Yellow Monster Can', 'Yellow 3D printed Monster can', 45, 'assets/placeholderCards.png', 3, 1),
 (19, 'Black Monster Can', 'Black 3D printed Monster can', 46, 'assets/placeholderCards.png', 3, 1),
 (20, 'White Monster Can', 'White 3D printed Monster can', 48, 'assets/placeholderCards.png', 3, 1),
-(21, 'Purple Monster Can', 'Purple 3D printed Monster can', 51, 'assets/placeholderCards.png', 3, 1);
+(21, 'Purple Monster Can', 'Purple 3D printed Monster can', 51, 'assets/placeholderCards.png', 3, 1),
+(50, 'white monster', '500ml can of monster', 50, 'assets/placeholderCards.png', 1, 2),
+(51, 'blue monster', '500ml can of monster', 51, 'assets/placeholderCards.png', 1, 2),
+(52, 'green monster', '500ml can of monster', 52, 'assets/placeholderCards.png', 1, 2),
+(53, 'red monster', '500ml can of monster', 53, 'assets/placeholderCards.png', 1, 2),
+(54, 'purple monster', '500ml can of monster', 54, 'assets/placeholderCards.png', 1, 2),
+(55, 'orange monster', '500ml can of monster', 55, 'assets/placeholderCards.png', 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -163,7 +151,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `authcode`
 --
 ALTER TABLE `authcode`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=449;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=464;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -175,7 +163,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- Constraints for dumped tables

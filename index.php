@@ -3,10 +3,12 @@ include 'inc/php/functions.php';
 
 initSession();
 
+
 head("Homepage");
 
 headerFunc();
 
+var_dump($_SESSION);
 ?>
 
 <main class="container">
