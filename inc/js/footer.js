@@ -1,4 +1,6 @@
-function adjustFooter() {
+window.adjustFooter = function () {
+  console.log("adjustFooter called");
+  
   var bodyHeight = $("body").outerHeight();
   var windowHeight = $(window).height();
 
@@ -7,11 +9,12 @@ function adjustFooter() {
   } else {
     $(".footer").removeClass("fixed-footer");
   }
-}
+};
 
-$(document).ready(function() {
-  setTimeout(function() {
+$(document).ready(function () {
+  setTimeout(function () {
     adjustFooter();
   }, 150);
 });
+
 $(window).on("resize", adjustFooter);

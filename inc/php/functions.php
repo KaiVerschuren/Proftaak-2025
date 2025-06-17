@@ -22,6 +22,7 @@ function head($page)
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
         <title><?php echo $page ?> | GoodieMaticAa</title>
+        <link rel="icon" type="image/x-icon" href="assets/AA.png">
     </head>
     <?php
 }
@@ -91,9 +92,10 @@ function footerFunc()
         <script defer src="inc/js/order.js"></script>
         <script defer src="inc/js/toast.js"></script>
         <script defer src="inc/js/tooltip.js"></script>
-        <script defer src="inc/js/dropdown.js"></script>
+        <script defer src="inc/js/generator.js"></script>
         <script defer src="inc/js/pagination.js"></script>
         <script defer src="inc/js/copy.js"></script>
+        <script defer src="inc/js/authenticate.js"></script>
     </body>
     <?php
 }
@@ -125,7 +127,8 @@ function toast()
     <?php
 }
 
-function tooltip() {
+function tooltip()
+{
     ?>
     <div id="tooltip" class="tooltip">toooooltip</div>
     <?php
@@ -134,7 +137,8 @@ function tooltip() {
 function toggleToast($type, $message)
 {
     ?>
-    <div id="toastToggled" style="display:none;" data-type="<?php echo $type ?>" data-message="<?php echo $message; ?>"></div>
+    <div id="toastToggled" style="display:none;" data-type="<?php echo $type ?>" data-message="<?php echo $message; ?>">
+    </div>
     <?php
 }
 
@@ -148,6 +152,58 @@ function initSession()
     }
     if (!isset($_SESSION["authenticated"])) {
         $_SESSION["authenticated"] = false;
+    }
+    // Session variable for if a code is for a goodiebag or not
+    if (!isset($_SESSION["goodieCode"])) {
+        $_SESSION["goodieCode"] = false;
+    }
+    if (!isset($_SESSION["setCode"])) {
+        $_SESSION["setCode"] = "";
+    }
+}
+
+/**
+ * Generates an array of codes based on parameters.
+ * @param string $string The string to check.
+ * @param array $existingCodes Array of existing codes to check against.
+ * 
+ * @return bool True if existing code is found.
+ */
+function checkExisting($string, $existingCodes)
+{
+    foreach ($existingCodes as $item) {
+        if ($item['code'] === $string) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * Adds a prefix to a string. used for goodie codes.
+ * @param string String to give a prefix tol.
+ * 
+ * @return string String with prefix "goodie-"
+ */
+function goodiePrefix($string)
+{
+    $string = "goodie-" . $string;
+    return $string;
+}
+
+/**
+ * Checks if the prefix is set. Used for settings goodieCode session var
+ * 
+ * @param string $code code to check if preset
+ * 
+ * @return bool
+ */
+function checkGoodiePrefix($code)
+{
+    if (strpos($code, "goodie-") === 0) {
+        return true;
+    } else {
+        return false;
     }
 }
 ?>

@@ -85,5 +85,18 @@ $(document).ready(function () {
         .removeClass("btnPrimary")
         .addClass("btnSecondary");
     }
+    if (setOneComplete && setTwoComplete && setThreeComplete) {
+      $("#productOne").val($(".setOne.selectedSetOne").data("position"));
+      $("#productTwo").val($(".setTwo.selectedSetTwo").data("position"));
+      $("#productThree").val($(".setThree.selectedSetThree").data("position"));
+
+      $(".orderForm").show();
+      requestAnimationFrame(() => {
+        requestAnimationFrame(adjustFooter);
+      });
+
+    }
   }
 });
+
+

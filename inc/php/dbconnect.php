@@ -141,3 +141,119 @@ function deleteCode($id)
 
     return $result;
 }
+
+/**
+ * Gets set one of the 3 sets used for goodie bags.
+ * 
+ * @return array Array of products with id 1 in collumn productSet
+ */
+
+ function getSetOne()
+{
+    $mysqli = connectDB();
+
+    $sql = "SELECT * FROM product WHERE productSet = 1";
+    $result = $mysqli->query($sql);
+
+    if (!$result) {
+        echo "Query failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        $mysqli->close();
+    }
+
+    $products = [];
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+
+    $result->free();
+    $mysqli->close();
+
+    return $products;
+}
+
+/**
+ * Gets set one of the 3 sets used for goodie bags.
+ * 
+ * @return array Array of products with id 2 in collumn productSet
+ */
+
+ function getSetTwo()
+{
+    $mysqli = connectDB();
+
+    $sql = "SELECT * FROM product WHERE productSet = 2";
+    $result = $mysqli->query($sql);
+
+    if (!$result) {
+        echo "Query failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        $mysqli->close();
+    }
+
+    $products = [];
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+
+    $result->free();
+    $mysqli->close();
+
+    return $products;
+}
+
+/**
+ * Gets set one of the 3 sets used for goodie bags.
+ * 
+ * @return array Array of products with id 3 in collumn productSet
+ */
+
+ function getSetThree()
+{
+    $mysqli = connectDB();
+
+    $sql = "SELECT * FROM product WHERE productSet = 3";
+    $result = $mysqli->query($sql);
+
+    if (!$result) {
+        echo "Query failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        $mysqli->close();
+    }
+
+    $products = [];
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+
+    $result->free();
+    $mysqli->close();
+
+    return $products;
+}
+
+/**
+ * function to add 1 use to a code, can be used for both goodie codes and normal ones.
+ * @param int $id Id of the code to add a use to. 
+ * @return bool Result, only really important if you have errors.
+ */
+function addUse($id) {
+    $mysqli = connectDB();
+
+    $sql = "UPDATE authcode SET orders = orders + 1 WHERE id = ?";
+    $stmt = $mysqli->prepare($sql);
+
+    if (!$stmt) {
+        echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        return false;
+    }
+
+    $stmt->bind_param("i", $id);
+    $result = $stmt->execute();
+
+    if (!$result) {
+        echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+
+    $stmt->close();
+    $mysqli->close();
+
+    return $result;
+}
