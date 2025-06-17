@@ -51,18 +51,33 @@ $(document).ready(function () {
   $(".setOne").on("click", function () {
     categorySetOne.removeClass("selectedSetOne");
     $(this).addClass("selectedSetOne");
+
+    $("#productOne").val($(this).data("position")); // update on click
+
     checkSelected();
+
+    let goodieData = $("#goodieData").data("goodie");
+    // alert(goodieData);
+    if (goodieData != "1") {
+      $(".orderForm").show();
+    }
   });
 
   $(".setTwo").on("click", function () {
     categorySetTwo.removeClass("selectedSetTwo");
     $(this).addClass("selectedSetTwo");
+
+    $("#productTwo").val($(this).data("position")); // update on click
+
     checkSelected();
   });
 
   $(".setThree").on("click", function () {
     categorySetThree.removeClass("selectedSetThree");
     $(this).addClass("selectedSetThree");
+
+    $("#productThree").val($(this).data("position")); // update on click
+
     checkSelected();
   });
 
@@ -86,17 +101,11 @@ $(document).ready(function () {
         .addClass("btnSecondary");
     }
     if (setOneComplete && setTwoComplete && setThreeComplete) {
-      $("#productOne").val($(".setOne.selectedSetOne").data("position"));
-      $("#productTwo").val($(".setTwo.selectedSetTwo").data("position"));
-      $("#productThree").val($(".setThree.selectedSetThree").data("position"));
 
       $(".orderForm").show();
       requestAnimationFrame(() => {
         requestAnimationFrame(adjustFooter);
       });
-
     }
   }
 });
-
-

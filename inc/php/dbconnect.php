@@ -152,7 +152,7 @@ function deleteCode($id)
 {
     $mysqli = connectDB();
 
-    $sql = "SELECT * FROM product WHERE productSet = 1";
+    $sql = "SELECT * FROM product WHERE productSet = 1 AND categoryId = 1";
     $result = $mysqli->query($sql);
 
     if (!$result) {
@@ -181,7 +181,7 @@ function deleteCode($id)
 {
     $mysqli = connectDB();
 
-    $sql = "SELECT * FROM product WHERE productSet = 2";
+    $sql = "SELECT * FROM product WHERE productSet = 2 AND categoryId = 1";
     $result = $mysqli->query($sql);
 
     if (!$result) {
@@ -210,7 +210,7 @@ function deleteCode($id)
 {
     $mysqli = connectDB();
 
-    $sql = "SELECT * FROM product WHERE productSet = 3";
+    $sql = "SELECT * FROM product WHERE productSet = 3 AND categoryId = 1";
     $result = $mysqli->query($sql);
 
     if (!$result) {
@@ -228,6 +228,33 @@ function deleteCode($id)
 
     return $products;
 }
+
+/**
+ * Fetches products from the "other" category
+ * @return array<array|bool|null> Almost always will be an array of products, unless error.
+ */
+function fetchOtherProducts() {
+    $mysqli = connectDB();
+
+    $sql = "SELECT * FROM product WHERE categoryId = 2";
+    $result = $mysqli->query($sql);
+
+    if (!$result) {
+        echo "Query failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        $mysqli->close();
+    }
+
+    $products = [];
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+
+    $result->free();
+    $mysqli->close();
+
+    return $products;
+}
+
 
 /**
  * function to add 1 use to a code, can be used for both goodie codes and normal ones.
@@ -275,7 +302,7 @@ function getUses($id) {
 
     $stmt->bind_param("i", $id);
     $stmt->execute();
-    $stmt->bind_result($orders);
+    $stmt->bind_result($orders, $maxOrders);
     $stmt->fetch();
 
     $stmt->close();
