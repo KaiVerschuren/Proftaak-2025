@@ -28,8 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $_SESSION['admin'] = false;
             header("location: order.php");
             exit();
-        } 
-        else {
+        } else {
             toggleToast("error", "Authentication failed. Code " . $authCode . " not found.");
             $_SESSION['authenticated'] = false;
         }
@@ -38,6 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $_SESSION['admin'] = true;
             $_SESSION['goodieCode'] = false;
             $_SESSION['setCode'] = $authCode;
+            $_SESSION['setCodeUses'] = $code['orders'];
+            $_SESSION['setCodeMaxUses'] = $code['maxOrders'];
 
             header("location: generator.php");
             exit();
@@ -47,6 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $_SESSION['admin'] = true;
             $_SESSION['goodieCode'] = true;
             $_SESSION['setCode'] = $authCode;
+            $_SESSION['setCodeUses'] = $code['orders'];
+            $_SESSION['setCodeMaxUses'] = $code['maxOrders'];
 
             header("location: generator.php");
             exit();

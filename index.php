@@ -7,17 +7,19 @@ initSession();
 head("Homepage");
 
 headerFunc();
-
-var_dump($_SESSION);
 ?>
 
 <main class="container">
     <div class="hero">
-        <div>
+        <div class="heroText">
             <h1>
                 Welcome to <span class="titleSecondary">GoodieMaticAa</span>
             </h1>
-            <p class="heroParagraph">Easily order snacks from our school vending machine,<br /> right from this website!</p>
+            <p class="heroParagraph">
+                If you’ve got an authentication code, you can use it here to claim a goodiebag, or other products.
+                Choose between a complete goodie bag or select individual products available in the school vending
+                machine. Enter your code to view and order your available options.
+            </p>
             <button class="btnSecondary heroButton" onclick="window.location.href = 'order.php'">Order now!</button>
         </div>
         <div>
@@ -68,7 +70,8 @@ var_dump($_SESSION);
                 <div class="timelineTileContent">
                     <h2 class="timelineTileTitle">Scan QR Code</h2>
                     <span class="timelineSubtitle">Step 1</span>
-                    <p class="timelineInfo">Open your phone camera or scanner app and scan the QR code shown on the vending machine.</p>
+                    <p class="timelineInfo">Open your phone camera or scanner app and scan the QR code shown on the
+                        vending machine.</p>
                 </div>
                 <div class="timelinePath"></div>
             </div>
@@ -80,7 +83,8 @@ var_dump($_SESSION);
                 <div class="timelineTileContent">
                     <h2 class="timelineTileTitle">Choose Your Items</h2>
                     <span class="timelineSubtitle">Step 2</span>
-                    <p class="timelineInfo">Browse the available items on your phone and select what you want to order.</p>
+                    <p class="timelineInfo">Browse the available items on your phone and select what you want to order.
+                    </p>
                 </div>
                 <div class="timelinePath"></div>
             </div>
@@ -92,7 +96,8 @@ var_dump($_SESSION);
                 <div class="timelineTileContent">
                     <h2 class="timelineTileTitle">Use Voucher</h2>
                     <span class="timelineSubtitle">Step 3</span>
-                    <p class="timelineInfo">If you have a voucher code, enter it during checkout to apply your balance.</p>
+                    <p class="timelineInfo">If you have a voucher code, enter it during checkout to apply your balance.
+                    </p>
                 </div>
                 <div class="timelinePath"></div>
             </div>
@@ -104,7 +109,8 @@ var_dump($_SESSION);
                 <div class="timelineTileContent">
                     <h2 class="timelineTileTitle">Place Order</h2>
                     <span class="timelineSubtitle">Step 4</span>
-                    <p class="timelineInfo">Confirm your selection and complete the order through the app or web interface.</p>
+                    <p class="timelineInfo">Confirm your selection and complete the order through the app or web
+                        interface.</p>
                 </div>
                 <div class="timelinePath"></div>
             </div>
@@ -116,7 +122,8 @@ var_dump($_SESSION);
                 <div class="timelineTileContent">
                     <h2 class="timelineTileTitle">Receive Your Item</h2>
                     <span class="timelineSubtitle">Step 5</span>
-                    <p class="timelineInfo">Wait a moment as the machine prepares your order. Pick it up from the tray once it’s delivered.</p>
+                    <p class="timelineInfo">Wait a moment as the machine prepares your order. Pick it up from the tray
+                        once it’s delivered.</p>
                 </div>
                 <div class="timelinePath"></div>
             </div>
