@@ -30,24 +30,24 @@ headerFunc();
       .then(data => alert(data));
   }
 </script>
-<input type="number" id="slot1" placeholder="Slot 1"><br><br>
-  <input type="number" id="slot2" placeholder="Slot 2"><br><br>
-  <input type="number" id="slot3" placeholder="Slot 3"><br><br>
-
-  <button onclick="sendSlots()">Send</button>
+<input type="text" id="productOne" />
+<input type="text" id="productTwo" />
+<input type="text" id="productThree" />
+<button onclick="sendOrder()">Send</button>on>
 
   <script>
-    function sendSlots() {
-      const slot1 = document.getElementById("slot1").value;
-      const slot2 = document.getElementById("slot2").value;
-      const slot3 = document.getElementById("slot3").value;
+function sendOrder() {
+    const one = document.getElementById("productOne").value;
+    const two = document.getElementById("productTwo").value;
+    const three = document.getElementById("productThree").value;
 
-      fetch(`send.php?slot1=${slot1}&slot2=${slot2}&slot3=${slot3}`)
-        .then(response => response.text())
-        .then(data => alert(data))
-        .catch(error => alert("Error: " + error));
-    }
-  </script>
+    const query = `send.php?productOne=${one}&productTwo=${two}&productThree=${three}`;
+
+    fetch(query)
+      .then(response => response.text())
+      .then(data => alert(data));
+}
+</script>
 </main>
 <?php
 footerFunc();
