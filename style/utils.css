@@ -87,8 +87,7 @@
 }
 
 .accentShadow {
-  box-shadow: 0 5px 15px oklch(from var(--black) l c h / calc(alpha - 0.4)),
-    0 0 20px oklch(from var(--black) l c h / calc(alpha - 0.5));
+  box-shadow: 0 20px 25px -20px oklch(from var(--black) l c h / calc(alpha - 0.4));
 }
 
 .cardShadow {

@@ -1,5 +1,4 @@
 <?php
-<<<<<<< Maurits
 
 var_dump($_GET);
 
@@ -14,41 +13,22 @@ $productThree = $_GET['productThree'];
 
 // Validate each as a numeric value
 foreach ([$productOne, $productTwo, $productThree] as $product) {
-    if (!ctype_digit($product)) {
-        echo "Error: Invalid product number detected.";
-        exit;
-    }
-=======
-// send.php
-
-if (!isset($_GET['slot'])) {
-    echo "Error: No slot parameter provided.";
-    exit;
+    // if (!ctype_digit($product)) {
+    //     echo "Error: Invalid product number detected.";
+    //     exit;
+    // }
 }
 
-$slot = $_GET['slot'];
-
-// Validate slot as numeric (optional, but recommended)
-if (!ctype_digit($slot)) {
-    echo "Error: Invalid slot number.";
-    exit;
->>>>>>> main
-}
-
+// $serialPort = 'COM5';
 $serialPort = '/dev/ttyACM0';
 
-<<<<<<< Maurits
 // Open serial port for writing
-=======
-// Open serial port for writing only
->>>>>>> main
 $fp = fopen($serialPort, 'w');
 if (!$fp) {
     echo "Error: Cannot open serial port $serialPort";
     exit;
 }
 
-<<<<<<< Maurits
 // Wait for Arduino to initialize
 sleep(2);
 
@@ -56,19 +36,8 @@ sleep(2);
 fwrite($fp, $productOne . "\n");
 fwrite($fp, $productTwo . "\n");
 fwrite($fp, $productThree . "\n");
-=======
-// Wait for Arduino to reset and initialize
-sleep(2);
-
-// Send the slot number followed by newline
-fwrite($fp, $slot . "\n");
->>>>>>> main
 
 // Close the port
 fclose($fp);
 
-<<<<<<< Maurits
 echo "Sent: $productOne, $productTwo, $productThree";
-=======
-echo "Sent slot: $slot";    
->>>>>>> main

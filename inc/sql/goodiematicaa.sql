@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 17, 2025 at 10:11 AM
+-- Generation Time: Jun 18, 2025 at 09:22 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -39,18 +39,28 @@ CREATE TABLE `authcode` (
 --
 
 INSERT INTO `authcode` (`id`, `code`, `orders`, `maxOrders`) VALUES
-(450, 'goodie-balky0', 0, 1),
-(451, 'goodie-filmy8', 0, 1),
-(452, 'goodie-deign8', 0, 1),
-(453, 'goodie-amber4', 0, 1),
-(454, 'goodie-udder8', 0, 1),
-(455, 'torso4', 0, 1),
+(450, 'goodie-balky0', 1, 1),
+(451, 'goodie-filmy8', 1, 1),
+(452, 'goodie-deign8', 1, 1),
+(453, 'goodie-amber4', 1, 1),
+(454, 'goodie-udder8', 1, 1),
+(455, 'torso4', 1, 1),
 (456, 'charm6', 0, 1),
 (457, 'nerdy2', 0, 1),
 (458, 'cairn6', 0, 1),
 (459, 'lodge1', 0, 1),
 (462, 'admin321', 15, 9999),
-(463, 'goodie-admin321', 1, 9999);
+(463, 'goodie-admin321', 37, 9999),
+(464, 'goodie-angel0', 0, 5),
+(465, 'goodie-rouge3', 0, 5),
+(466, 'goodie-alibi5', 0, 5),
+(467, 'goodie-xenia2', 0, 5),
+(468, 'goodie-chive6', 1, 5),
+(469, 'goodie-spine0', 0, 1),
+(470, 'goodie-gloom8', 0, 1),
+(471, 'goodie-deign8', 0, 1),
+(472, 'goodie-joust8', 1, 1),
+(473, 'goodie-punch1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -151,7 +161,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `authcode`
 --
 ALTER TABLE `authcode`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=464;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=474;
 
 --
 -- AUTO_INCREMENT for table `category`

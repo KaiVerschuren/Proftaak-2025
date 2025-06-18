@@ -64,8 +64,6 @@ function headerFunc()
                 </ul>
             </nav>
             <div class="headerCallToAction">
-<<<<<<< Maurits
-=======
                 <?php 
                 if ($_SESSION["authenticated"] == true) {
                     ?>
@@ -73,7 +71,6 @@ function headerFunc()
                     <?php
                 }
                 ?>
->>>>>>> main
                 <button class="btnSecondary" onclick="window.location.href = 'order.php'">
                     Order
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -138,6 +135,82 @@ function toast()
     <?php
 }
 
+function timeline()
+{
+    ?>
+    <h1 class="timelineTitle">How it works</h1>
+    <div class="timelineTileWrapper">
+        <div class="timelineIcon">
+            <span class="timelineIconText">1</span>
+        </div>
+        <div class="timelineTile">
+            <div class="timelineTileContent">
+                <h2 class="timelineTileTitle">Scan QR Code</h2>
+                <span class="timelineSubtitle">Step 1</span>
+                <p class="timelineInfo">Open your phone camera or scanner app and scan the QR code shown on the
+                    vending machine.</p>
+            </div>
+            <div class="timelinePath"></div>
+        </div>
+
+        <div class="timelineIcon">
+            <span class="timelineIconText">2</span>
+        </div>
+        <div class="timelineTile">
+            <div class="timelineTileContent">
+                <h2 class="timelineTileTitle">Choose Your Items</h2>
+                <span class="timelineSubtitle">Step 2</span>
+                <p class="timelineInfo">Browse the available items on your phone and select what you want to
+                    order.
+                </p>
+            </div>
+            <div class="timelinePath"></div>
+        </div>
+
+        <div class="timelineIcon">
+            <span class="timelineIconText">3</span>
+        </div>
+        <div class="timelineTile">
+            <div class="timelineTileContent">
+                <h2 class="timelineTileTitle">Use Voucher</h2>
+                <span class="timelineSubtitle">Step 3</span>
+                <p class="timelineInfo">If you have a voucher code, enter it during checkout to apply your
+                    balance.
+                </p>
+            </div>
+            <div class="timelinePath"></div>
+        </div>
+
+        <div class="timelineIcon">
+            <span class="timelineIconText">4</span>
+        </div>
+        <div class="timelineTile">
+            <div class="timelineTileContent">
+                <h2 class="timelineTileTitle">Place Order</h2>
+                <span class="timelineSubtitle">Step 4</span>
+                <p class="timelineInfo">Confirm your selection and complete the order through the app or web
+                    interface.</p>
+            </div>
+            <div class="timelinePath"></div>
+        </div>
+
+        <div class="timelineIcon">
+            <span class="timelineIconText">5</span>
+        </div>
+        <div class="timelineTile">
+            <div class="timelineTileContent">
+                <h2 class="timelineTileTitle">Receive Your Item</h2>
+                <span class="timelineSubtitle">Step 5</span>
+                <p class="timelineInfo">Wait a moment as the machine prepares your order. Pick it up from the
+                    tray
+                    once it’s delivered.</p>
+            </div>
+            <div class="timelinePath"></div>
+        </div>
+    </div>
+    <?php
+}
+
 function tooltip()
 {
     ?>
@@ -148,7 +221,8 @@ function tooltip()
 function toggleToast($type, $message, $url = null)
 {
     ?>
-    <div id="toastToggled" style="display:none;" data-type="<?php echo $type ?>" data-message="<?php echo $message; ?>" data-url="<?php echo $url; ?>">
+    <div id="toastToggled" style="display:none;" data-type="<?php echo $type ?>" data-message="<?php echo $message; ?>"
+        data-url="<?php echo $url; ?>">
     </div>
     <?php
 }
@@ -216,21 +290,17 @@ function checkGoodiePrefix($code)
         return false;
     }
 }
-<<<<<<< Maurits
 ?>
-  <script>
+<script>
     function sendOrder() {
-      const one = document.getElementById("productOne").value;
-      const two = document.getElementById("productTwo").value;
-      const three = document.getElementById("productThree").value;
+        const one = document.getElementById("productOne").value;
+        const two = document.getElementById("productTwo").value;
+        const three = document.getElementById("productThree").value;
 
-      const query = `send.php?productOne=${one}&productTwo=${two}&productThree=${three}`;
+        const query = `send.php?productOne=${one}&productTwo=${two}&productThree=${three}`;
 
-      fetch(query)
-        .then(response => response.text())
-        .then(data => alert(data));
+        fetch(query)
+            .then(response => response.text())
+            .then(data => alert(data));
     }
-  </script>
-=======
-?>
->>>>>>> main
+</script>

@@ -9,10 +9,14 @@ headerFunc();
 ?>
 <main class="container">
     <div class="aboutMain">
-        <div class="aboutInfoManual"> </div>
-        <div class="aboutImage"> </div>
-        <div class="aboutUs"> </div>
-        <div class="aboutOrder"> </div>
+        <div class="aboutTile cardShadow aboutProject">
+
+        </div>
+        <div class="aboutTile cardShadow aboutTimeline">
+            <?php timeline(); ?>
+        </div>
+        <div class="aboutTile cardShadow aboutUs"> </div>
+        <div class="aboutTile cardShadow aboutOrder"> </div>
     </div>
 </main>
 <?php
