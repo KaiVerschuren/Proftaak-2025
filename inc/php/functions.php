@@ -291,19 +291,4 @@ function checkGoodiePrefix($code)
     }
 }
 ?>
-<script>
-    function sendOrder() {
-        const one = document.getElementById("productOne").value;
-        const two = document.getElementById("productTwo").value;
-        const three = document.getElementById("productThree").value;
 
-        const query = `send.php?productOne=${one}&productTwo=${two}&productThree=${three}`;
-
-        fetch(query)
-            .then(response => response.text())
-            .then(data => alert(data));
-    }
-  </script>
-=======
-?>
->>>>>>> main

@@ -17,9 +17,7 @@ foreach ([$productOne, $productTwo, $productThree] as $product) {
         echo "Error: Invalid product number detected.";
         exit;
     }
-=======
-// send.php
-
+}
 if (!isset($_GET['slot'])) {
     echo "Error: No slot parameter provided.";
     exit;
@@ -31,7 +29,6 @@ $slot = $_GET['slot'];
 if (!ctype_digit($slot)) {
     echo "Error: Invalid slot number.";
     exit;
->>>>>>> main
 }
 
 $serialPort = '/dev/ttyACM0';
