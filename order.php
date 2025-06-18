@@ -195,7 +195,11 @@ headerFunc();
             ?>
             <input type="hidden" id="productTwo" name="productTwo" value="">
             <input type="hidden" id="productThree" name="productThree" value="">
+<<<<<<< Maurits
             <input name="productSubmit" type="button" class="btnPrimary" value="Order" id="orderButton" onclick="sendOrder()">
+=======
+            <input name="productSubmit" type="submit" class="btnPrimary" value="Order" id="orderButton">
+>>>>>>> main
             <?php
         }
         ?>

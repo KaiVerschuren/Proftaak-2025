@@ -1,0 +1,123 @@
+.categoryWrapper {
+  display: flex;
+  overflow: hidden;
+  padding: 3em 0;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  flex: 0 0 auto;
+  width: 100%;
+  transition: 2s cubic-bezier(0.31, 0.99, 0.31, 1);
+}
+
+.categoryOption {
+  width: 9em;
+  aspect-ratio: 11/12;
+  background-color: var(--white);
+  border-radius: 1em;
+  transition: ease 0.3s;
+}
+
+.categoryOption:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 40px 50px -35px oklch(from var(--black) l c h /
+        calc(alpha - 0.5));
+}
+
+.categoryOptionImage {
+  width: 9em;
+  aspect-ratio: 12/8;
+  border-radius: 1em 1em 0 0;
+}
+
+.categoryInfo {
+  font-size: 0.6em;
+  padding: 0.8rem 1rem;
+}
+
+.categoryOptionTitle {
+  font-size: 1rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.categoryOptionInfo {
+  color: oklch(from var(--black-soft) calc(l + 0.1) c h);
+}
+
+.orderButtonWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.orderPageButton {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+  border: solid 2px transparent !important;
+}
+
+.orderButtonSelected {
+  border: solid 2px var(--black) !important;
+}
+
+.orderForm {
+  margin-bottom: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+.selectedSetOne,
+.selectedSetTwo,
+.selectedSetThree {
+  transform: scale(1.015);
+  box-shadow: 0px 40px 50px -35px oklch(from var(--secondary) l c h) !important;
+  background: oklch(
+    from var(--secondary) calc(l + 0.1) c h / calc(alpha - 0.6)
+  );
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+  .categoryOption,
+  .categoryOptionImage {
+    width: 12.5em;
+  }
+  .categoryInfo {
+    font-size: 0.8rem;
+  }
+  .categoryOptionTitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+  .categoryOption,
+  .categoryOptionImage {
+    width: 15em;
+  }
+  .categoryInfo {
+    font-size: 1rem;
+  }
+  .categoryOptionTitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

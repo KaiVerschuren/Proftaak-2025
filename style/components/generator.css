@@ -1,0 +1,175 @@
+.generator {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin: 2em 0;
+  /* border: solid 1px green; */
+}
+
+.codesRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+}
+
+.codesRowHeader {
+  font-weight: 900;
+}
+
+.code {
+  flex: 7;
+  font-family: "Roboto Mono", monospace;
+}
+
+.uses, .maxUses {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.CodesPagination {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.pageNumber {
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid var(--white-soft);
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.2em;
+}
+
+.options {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+.generatedCodes {
+  grid-area: 1 / 1 / 2 / 2;
+  /* border: solid 1px blue; */
+}
+.generatorControl {
+  grid-area: 1 / 2 / 2 / 3;
+  /* border: solid 1px red; */
+}
+.generatorTile {
+  background-color: var(--white);
+  padding: 1.5em;
+  border-radius: 1em;
+}
+
+.generatorFormUL > li {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.dropdownWrapper {
+  position: relative;
+}
+
+.dropdownIcon {
+  width: 2em;
+  height: 2em;
+  padding: .25em;
+  border-radius: 5px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--white-soft);
+  cursor: pointer;
+}
+
+.codesDropdown {
+  position: absolute;
+  left: 50%;
+  top: 2em;
+  transform: translatex(-50%);
+  z-index: 10;
+  border: solid 1px var(--white-soft);
+  border-radius: .5em;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 10px 40px -10px oklch(from var(--black) l c h / calc(alpha - 0.25));
+  pointer-events: none;
+  transition: 0.3s ease;
+  display: block;
+  opacity: 0;
+}
+
+.codesDropdown.dropdownShow {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.codesDropdownButton, .codesDropdownButtonCopy {
+  padding: .75em 1em;
+  background: transparent;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.codesDropdownButton:not(:last-child), .codesDropdownButtonCopy {
+  border-bottom: 1px solid var(--white-soft);
+}
+
+.codesDropdownButton:first-child {
+  border-radius: 5px 5px 0 0;
+}
+
+/* Copy button */
+.codesDropdownButtonCopy:hover {
+  color: var(--info);
+  box-shadow: 0 10px 20px -10px var(--info);
+  background: oklch(from var(--info) l c h / calc(alpha - 0.90));
+}
+
+/* Renew button */
+.codesDropdownButton:nth-child(1):hover {
+  color: var(--warning);
+  box-shadow: 0 10px 20px -10px var(--warning);
+  background: oklch(from var(--warning) l c h / calc(alpha - 0.90));
+}
+
+/* Delete button */
+.codesDropdownButton:nth-child(2):hover {
+  color: var(--error);
+  box-shadow: 0 10px 20px -10px var(--error);
+  background: oklch(from var(--error) l c h / calc(alpha - 0.90));
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+  .generator {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: repeat(1, 1fr);
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

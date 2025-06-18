@@ -1,0 +1,94 @@
+.hero {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  gap: 5em;
+  min-height: 85dvh;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0;
+}
+
+.heroText > h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 900;
+}
+
+.heroParagraph {
+  margin-bottom: 1.5em;
+  font-size: 0.65rem;
+  max-width: 60ch;
+}
+
+.heroImg {
+  width: 20em;
+}
+
+.heroButton {
+  font-size: 0.8rem;
+}
+
+/* xs */
+@media (min-width: 475px) {
+  .hero > div > h1 {
+  font-size: 2.5rem;
+}
+.heroParagraph {
+  font-size: 0.8rem;
+}
+.heroButton {
+  font-size: 1rem;
+}
+}
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+@media (min-width: 768px) {
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: start;
+    text-align: start;
+    gap: 0;
+  }
+
+  .heroImg {
+    width: 30em;
+  }
+
+  .hero > div {
+    display: block;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .hero > div > h1 {
+    font-size: 3.5rem;
+  }
+
+  .heroParagraph {
+    font-size: 1.4rem;
+  }
+
+  .heroText {
+    padding-top: 5em;
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

@@ -1,0 +1,264 @@
+@import url("normalize.css");
+@import url("style.css");
+@import url("components/header.css");
+@import url("components/footer.css");
+@import url("components/homepage.css");
+@import url("components/top.css");
+@import url("components/timeline.css");
+@import url("components/authenticate.css");
+@import url("components/order.css");
+@import url("components/generator.css");
+@import url("components/playground.css");
+@import url("components/toast.css");
+@import url("components/tooltip.css");
+@import url("components/about.css");
+
+.btnPrimary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.05em;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  box-shadow: 0 10px 20px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
+    0 6px 6px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
+    0 0 100px -10px var(--primary);
+  transition: 0.3s ease;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 18px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
+    0 10px 10px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
+    0 0 120px -10px var(--primary);
+}
+
+.btnSecondary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.05em;
+  background-color: var(--secondary);
+  color: var(--black);
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px oklch(from var(--secondary) l c h / calc(alpha - 0.5)),
+    0 6px 6px oklch(from var(--secondary) l c h / calc(alpha - 0.5)),
+    0 0 100px -10px var(--secondary);
+  transition: 0.3s ease;
+}
+
+.btnSecondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 18px oklch(from var(--secondary) l c h / calc(alpha - 0.5)),
+    0 10px 10px oklch(from var(--secondary) l c h / calc(alpha - 0.5)),
+    0 0 120px -10px var(--secondary);
+  color: var(--white);
+}
+
+.btnIcon {
+  width: 1.25em;
+}
+
+.titlePrimary {
+  color: var(--primary);
+}
+
+.titleSecondary {
+  transition: 0.3s ease;
+}
+
+.titleSecondary:hover {
+  color: var(--secondary);
+  text-shadow: 0 0 20px rgba(0, 153, 102, 0.3);
+}
+
+.accentShadow {
+  box-shadow: 0 5px 15px oklch(from var(--black) l c h / calc(alpha - 0.4)),
+    0 0 20px oklch(from var(--black) l c h / calc(alpha - 0.5));
+}
+
+.cardShadow {
+  box-shadow: 0px 35px 75px -50px oklch(from var(--black) l c h / calc(alpha - 0.25));
+}
+
+.input {
+  width: 100%;
+  background-color: oklch(from var(--white) calc(l - 0.05) c h);
+  border-radius: .5rem;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: .3s cubic-bezier(.25,.01,.25,1) 0s;
+  margin-bottom: 1em;
+}
+
+.input:hover, .input:focus {
+  outline: none;
+  border-color: var(--black);
+}
+
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkbox:before {
+  content: "";
+  background-color: var(--primary);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.checkbox:checked:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.checkboxLabel {
+  font-size: 18px;
+  color: var(--black);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.noStyleUL {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.resetAnchorTag {
+  text-decoration: none;
+}
+
+.gradientText {
+  background: linear-gradient(to left, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.removeArrow::-webkit-outer-spin-button,
+.removeArrow::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.removeArrow {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: none;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translatey(50%);
+  transition: all 1s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* xs */
+@media (min-width: 475px) {
+  .container {
+    width: 475px;
+  }
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .container {
+    width: 640px;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .container {
+    width: 1024px;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .container {
+    width: 1536px;
+  }
+}
+
+/* paste this on css files where responsive layout is applicable */
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

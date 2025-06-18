@@ -1,0 +1,77 @@
+:root {
+  --black: oklch(12.9% 0.042 264.695);
+  --black-soft: oklch(37.2% 0.044 257.287);
+  --white: oklch(96.8% 0.007 247.896);
+  --white-soft: oklch(70.4% 0.04 256.788);
+
+  --background: oklch(96.8% 0.007 247.896);
+
+  --primary: oklch(76.9% 0.188 70.08);
+  --secondary: oklch(59.6% 0.145 163.225);
+  --accent: oklch(20.8% 0.042 265.755);
+  /*! --accent: #0f1223; BACKUP */
+
+  --success: oklch(72.3% 0.219 149.579);
+  --warning: oklch(76.9% 0.188 70.08);
+  --error: oklch(58.6% 0.253 17.585);
+  --info: oklch(68.5% 0.169 237.323);
+
+  /*Primary rgba: 	rgba(253, 154, 0, 1) */
+  /*secondary rgba: 	rgba(0, 153, 102, 1)  */
+}
+
+* {
+  margin: 0;
+  line-height: calc(1em + 0.5rem);
+  box-sizing: border-box;
+  color: var(--text);
+  font-family: montserrat, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--background);
+  background-image: radial-gradient(
+    oklch(0.88 0.0148 264.49) 1.5px,
+    transparent 1.5px
+  );
+  background-attachment: fixed;
+  background-size: 25px 25px;
+  color: var(--text);
+}
+
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+button {
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  color: var(--secondary);
+  font-weight: 700;
+}
