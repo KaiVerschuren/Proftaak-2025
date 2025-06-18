@@ -3,6 +3,7 @@ include 'inc/php/functions.php';
 
 initSession();
 
+
 head("Homepage");
 
 headerFunc();
@@ -43,7 +44,7 @@ headerFunc();
                 <img src="./assets/placeholderCards.png" alt="3D Printed AA Statue" class="topCardImg">
                 <div class="topCardInfo">
                     <h2 class="topCardTitle">AA 3D Print</h2>
-                    <p class="topCartText">Colored 3D-printed "AA" statue. Great for desk decoration or branding props.</p>
+                    <p class="topCartText">Colored 3D-printed "AA" statue. Great for desk decoration.</p>
                     <button class="btnPrimary topCardButton">Order now!</button>
                 </div>
             </div>

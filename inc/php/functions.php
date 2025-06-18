@@ -303,4 +303,7 @@ function checkGoodiePrefix($code)
             .then(response => response.text())
             .then(data => alert(data));
     }
-</script>
+  </script>
+=======
+?>
+>>>>>>> main
