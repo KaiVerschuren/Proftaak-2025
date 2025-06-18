@@ -64,6 +64,8 @@ function headerFunc()
                 </ul>
             </nav>
             <div class="headerCallToAction">
+<<<<<<< Maurits
+=======
                 <?php 
                 if ($_SESSION["authenticated"] == true) {
                     ?>
@@ -71,6 +73,7 @@ function headerFunc()
                     <?php
                 }
                 ?>
+>>>>>>> main
                 <button class="btnSecondary" onclick="window.location.href = 'order.php'">
                     Order
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -213,4 +216,21 @@ function checkGoodiePrefix($code)
         return false;
     }
 }
+<<<<<<< Maurits
 ?>
+  <script>
+    function sendOrder() {
+      const one = document.getElementById("productOne").value;
+      const two = document.getElementById("productTwo").value;
+      const three = document.getElementById("productThree").value;
+
+      const query = `send.php?productOne=${one}&productTwo=${two}&productThree=${three}`;
+
+      fetch(query)
+        .then(response => response.text())
+        .then(data => alert(data));
+    }
+  </script>
+=======
+?>
+>>>>>>> main
