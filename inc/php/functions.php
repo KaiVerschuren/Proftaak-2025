@@ -214,9 +214,7 @@ function checkGoodiePrefix($code)
         return true;
     } else {
         return false;
-    }
-}
-<<<<<<< Maurits
+    }}
 ?>
   <script>
     function sendOrder() {
@@ -231,6 +229,3 @@ function checkGoodiePrefix($code)
         .then(data => alert(data));
     }
   </script>
-=======
-?>
->>>>>>> main
