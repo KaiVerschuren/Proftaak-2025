@@ -135,6 +135,83 @@ function toast()
     <?php
 }
 
+<<<<<<< Updated upstream
+=======
+function timeline()
+{
+    ?>
+    <h1 class="timelineTitle">How it works</h1>
+    <div class="timelineTileWrapper">
+        <div class="timelineIcon">
+            <span class="timelineIconText">1</span>
+        </div>
+        <div class="timelineTile">
+            <div class="timelineTileContent">
+                <h2 class="timelineTileTitle">Scan QR Code</h2>
+                <span class="timelineSubtitle">Step 1</span>
+                <p class="timelineInfo">Open your phone camera and scan the QR code shown, to access the website.</p>
+            </div>
+            <div class="timelinePath"></div>
+        </div>
+
+        <div class="timelineIcon">
+            <span class="timelineIconText">2</span>
+        </div>
+        <div class="timelineTile">
+            <div class="timelineTileContent">
+                <h2 class="timelineTileTitle">Enter Auth code</h2>
+                <span class="timelineSubtitle">Step 2</span>
+                <p class="timelineInfo">Browse the available items on the website and select what you want to
+                    order.
+                </p>
+            </div>
+            <div class="timelinePath"></div>
+        </div>
+
+        <div class="timelineIcon">
+            <span class="timelineIconText">3</span>
+        </div>
+        <div class="timelineTile">
+            <div class="timelineTileContent">
+                <h2 class="timelineTileTitle">Choose Products</h2>
+                <span class="timelineSubtitle">Step 3</span>
+                <p class="timelineInfo">Choose the products you want to order, choose 3 if you have a goodie code, and 1 if you dont.
+                </p>
+            </div>
+            <div class="timelinePath"></div>
+        </div>
+
+        <div class="timelineIcon">
+            <span class="timelineIconText">4</span>
+        </div>
+        <div class="timelineTile">
+            <div class="timelineTileContent">
+                <h2 class="timelineTileTitle">Place Order</h2>
+                <span class="timelineSubtitle">Step 4</span>
+                <p class="timelineInfo">Confirm your selection and complete the order through the web
+                    interface.</p>
+            </div>
+            <div class="timelinePath"></div>
+        </div>
+
+        <div class="timelineIcon">
+            <span class="timelineIconText">5</span>
+        </div>
+        <div class="timelineTile">
+            <div class="timelineTileContent">
+                <h2 class="timelineTileTitle">Receive Your Item</h2>
+                <span class="timelineSubtitle">Step 5</span>
+                <p class="timelineInfo">Wait a moment as the machine prepares your order. Pick it up from the
+                    tray
+                    once it’s delivered.</p>
+            </div>
+            <div class="timelinePath"></div>
+        </div>
+    </div>
+    <?php
+}
+
+>>>>>>> Stashed changes
 function tooltip()
 {
     ?>
