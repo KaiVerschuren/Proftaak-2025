@@ -15,6 +15,8 @@ $setCodeUses = (int)$_SESSION['setCodeUses'];
 $setCodeMaxUses = (int)$_SESSION['setCodeMaxUses'];
 $usesLeft = $setCodeUses < $setCodeMaxUses;
 
+var_dump($_SESSION);
+
 if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
     if (!$usesLeft) {
         toggleToast("error", "This code has no uses left.");
@@ -40,8 +42,12 @@ if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
         $orderSuccess = true;
         toggleToast('success', 'Products were ordered :D', 'index.php');
 
+        foreach ($selectedProducts as $product) {
+            addOrderCount($product);
+        }
+
         if (!$usesLeft) {
-            toggleToast("error", "You have no uses left for this code.", "index.php");
+            toggleToast("error", "You have no uses left for this code.");
         }
     }
 
