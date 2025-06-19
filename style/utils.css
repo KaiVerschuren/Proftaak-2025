@@ -27,6 +27,7 @@
   border-radius: 6px;
   border: none;
   outline: none;
+  cursor: pointer;
   box-shadow: 0 10px 20px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
     0 6px 6px oklch(from var(--primary) l c h / calc(alpha - 0.5)),
     0 0 100px -10px var(--primary);
