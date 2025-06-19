@@ -8,21 +8,19 @@ if ($_SESSION['authenticated'] == false) {
 }
 
 $goodieCode = $_SESSION['goodieCode'];
+$orderSuccess = false;
 
-$usesLeft = false;
-
-// var_dump($_POST);
+// update this if `addUse()` already updates the DB
+$setCodeUses = (int)$_SESSION['setCodeUses'];
+$setCodeMaxUses = (int)$_SESSION['setCodeMaxUses'];
+$usesLeft = $setCodeUses < $setCodeMaxUses;
 
 if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
-    if ($_SESSION['setCodeUses'] >= $_SESSION['setCodeMaxUses']) {
-        toggleToast("error", "This code has no uses left. you can only view products.");
-        $usesLeft = false;
-    } else {
-        $usesLeft = true;
+    if (!$usesLeft) {
+        toggleToast("error", "This code has no uses left.");
     }
-    if (isset($_POST['productSubmit']) && $usesLeft == true) {
-        // ! code in here means that the products were/can be ordered
 
+    if (isset($_POST['productSubmit']) && $usesLeft) {
         $productOne = $_POST['productOne'] ?? '';
         $productTwo = $_POST['productTwo'] ?? '';
         $productThree = $_POST['productThree'] ?? '';
@@ -33,57 +31,83 @@ if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
             'productThree' => $productThree
         ];
 
-        toggleToast("success", "You have ordered your goodiebag :D", "index.php");
         addUse($_SESSION['setCodeId']);
-        $_SESSION['setCodeUses'] += 1;
+        $_SESSION['setCodeUses']++; // remove this if `addUse()` updates session or DB
 
-        if ($_SESSION['setCodeUses'] >= $_SESSION['setCodeMaxUses']) {
-            $usesLeft = false;
-        } else {
-            $usesLeft = true;
+        $setCodeUses = (int)$_SESSION['setCodeUses'];
+        $usesLeft = $setCodeUses < $setCodeMaxUses;
+
+        $orderSuccess = true;
+        toggleToast('success', 'Products were ordered :D', 'index.php');
+
+        if (!$usesLeft) {
+            toggleToast("error", "You have no uses left for this code.", "index.php");
         }
     }
-    if ($usesLeft == false) {
-        toggleToast("error", "You have no uses left for this code.", "index.php");
-    }
 
-    // Fetch the products for the sets
     $setOne = getSetOne();
     $setTwo = getSetTwo();
     $setThree = getSetThree();
-} else if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == false) {
-    // ! code below is for non-school products :)
+}
+
+else if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == false) {
     $products = fetchOtherProducts();
 
-    if ($_SESSION['setCodeUses'] >= $_SESSION['setCodeMaxUses']) {
-        toggleToast("error", "This code has no uses left. you can only view products.");
-        $usesLeft = false;
-    } else {
-        $usesLeft = true;
+    if (!$usesLeft) {
+        toggleToast("error", "This code has no uses left. You can only view products.");
     }
 
-    if (isset($_POST['productSubmit']) && $usesLeft == true) {
-        // ! code in here means that the products were/can be ordered
+    if (isset($_POST['productSubmit']) && $usesLeft) {
         $productOne = $_POST['productOne'] ?? '';
 
-        toggleToast('success', 'Product from position: ' . $productOne . " was ordered :D", 'index.php');
-
         addUse($_SESSION['setCodeId']);
+        $_SESSION['setCodeUses']++;
 
-        $_SESSION['setCodeUses'] += 1;
-        if ($_SESSION['setCodeUses'] >= $_SESSION['setCodeMaxUses']) {
-            $usesLeft = false;
-        } else {
-            $usesLeft = true;
-        }
+        $setCodeUses = (int)$_SESSION['setCodeUses'];
+        $usesLeft = $setCodeUses < $setCodeMaxUses;
+
         if (!isset($productOne)) {
-            toggleToast("error", "You have not selected a product to order.", "");
+            toggleToast("error", "You have not selected a product to order.");
+        } else {
+            toggleToast('success', 'Product from position: ' . $productOne . " was ordered :D", 'index.php');
+            $orderSuccess = true;
         }
     }
-    if ($usesLeft == false) {
+
+    if (!$usesLeft && !$orderSuccess) {
+        toggleToast("error", "You have no uses left for this code.", "index.php");
+    }
+} 
+else if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == false) {
+    // ! code below is to order non-school products
+    $products = fetchOtherProducts();
+
+    if (!$usesLeft) {
+        toggleToast("error", "This code has no uses left. You can only view products.");
+    }
+
+    if (isset($_POST['productSubmit']) && $usesLeft) {
+        $productOne = $_POST['productOne'] ?? '';
+
+        addUse($_SESSION['setCodeId']);
+        $_SESSION['setCodeUses']++;
+
+        $setCodeUses = (int)$_SESSION['setCodeUses'];
+        $usesLeft = $setCodeUses < $setCodeMaxUses;
+
+        if (!$productOne) {
+            toggleToast("error", "You have not selected a product to order.");
+        } else {
+            toggleToast('success', 'Product from position: ' . $productOne . " was ordered :D", 'index.php');
+            $orderSuccess = true;
+        }
+    }
+
+    if (!$usesLeft && !isset($_POST['productSubmit'])) {
         toggleToast("error", "You have no uses left for this code.", "index.php");
     }
 }
+
 
 head("Order");
 
@@ -189,12 +213,12 @@ headerFunc();
     }
     ?>
     <form method="post" class="orderForm" style="display: none;">
-        <input type="hidden" id="productOne" name="productOne" value="">
+        <input type="hidden" id="productOne" name="productOne" value="<?php echo $productOne; ?>">
         <?php
         if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
             ?>
-            <input type="hidden" id="productTwo" name="productTwo" value="">
-            <input type="hidden" id="productThree" name="productThree" value="">
+            <input type="hidden" id="productTwo" name="productTwo" value="<?php echo $productTwo; ?>">
+            <input type="hidden" id="productThree" name="productThree" value="<?php echo $productThree; ?>">
             <input name="productSubmit" type="submit" class="btnPrimary" value="Order" id="orderButton">
             <?php
         }
@@ -202,7 +226,7 @@ headerFunc();
         <?php
         if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == false) {
             ?>
-            <input type="submit" class="btnPrimary" value="Order" name="productSubmit">
+            <input name="productSubmit" type="submit" class="btnPrimary" value="Order" id="orderButton">
             <?php
         }
         ?>
@@ -210,6 +234,7 @@ headerFunc();
 
     <!-- to check if the user has a goodie code -->
     <div id="goodieData" data-goodie="<?php echo $goodieCode; ?>"></div>
+    <div id="ordered" data-order="<?php echo $orderSuccess ? "true" : "false"; ?>"></div>
 </main>
 <?php
 footerFunc();

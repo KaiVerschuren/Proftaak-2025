@@ -10,12 +10,6 @@ headerFunc();
 <main class="container">
     <h1 class="aboutTitle">About GoodieMaticAa</h1>
     <div class="aboutMain">
-<<<<<<< Updated upstream
-        <div class="aboutInfoManual"> </div>
-        <div class="aboutImage"> </div>
-        <div class="aboutUs"> </div>
-        <div class="aboutOrder"> </div>
-=======
         <div class="aboutTile cardShadow aboutProject">
             <div class="aboutText">
                 <h1>About GoodieMaticAa</h1>
@@ -36,11 +30,9 @@ headerFunc();
                 <img src="assets/vendingMachineIllustration.png" alt="illustration of the vending machine">
                 <img class="aboutAA" src="assets/AA.png" alt="illustration of the vending machine">
             </div>
-        </div>
         <div class="aboutTile cardShadow aboutTimeline">
             <?php timeline(); ?>
         </div>
->>>>>>> Stashed changes
     </div>
 </main>
 <?php

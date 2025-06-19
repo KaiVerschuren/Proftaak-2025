@@ -70,8 +70,7 @@ headerFunc();
                 <div class="timelineTileContent">
                     <h2 class="timelineTileTitle">Scan QR Code</h2>
                     <span class="timelineSubtitle">Step 1</span>
-                    <p class="timelineInfo">Open your phone camera or scanner app and scan the QR code shown on the
-                        vending machine.</p>
+                    <p class="timelineInfo">Open your phone camera or scanner app and scan the QR code shown on the vending machine.</p>
                 </div>
                 <div class="timelinePath"></div>
             </div>

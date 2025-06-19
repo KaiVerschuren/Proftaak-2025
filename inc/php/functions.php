@@ -219,7 +219,8 @@ function tooltip()
 function toggleToast($type, $message, $url = null)
 {
     ?>
-    <div id="toastToggled" style="display:none;" data-type="<?php echo $type ?>" data-message="<?php echo $message; ?>" data-url="<?php echo $url; ?>">
+    <div id="toastToggled" style="display:none;" data-type="<?php echo $type ?>" data-message="<?php echo $message; ?>"
+        data-url="<?php echo $url; ?>">
     </div>
     <?php
 }
@@ -288,3 +289,4 @@ function checkGoodiePrefix($code)
     }
 }
 ?>
+
