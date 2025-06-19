@@ -22,8 +22,7 @@ function showToast(type, message, redirectUrl = null) {
     if (redirectUrl) {
       window.location.href = redirectUrl;
     }
-  }, 10000);
-  // ! jfkd;ajklfdajkf;ld
+  }, 3000);
 }
 
 $(".toastCrossWrapper").on("click", () => {
