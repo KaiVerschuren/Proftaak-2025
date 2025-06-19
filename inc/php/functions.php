@@ -147,8 +147,7 @@ function timeline()
             <div class="timelineTileContent">
                 <h2 class="timelineTileTitle">Scan QR Code</h2>
                 <span class="timelineSubtitle">Step 1</span>
-                <p class="timelineInfo">Open your phone camera or scanner app and scan the QR code shown on the
-                    vending machine.</p>
+                <p class="timelineInfo">Open your phone camera and scan the QR code shown, to access the website.</p>
             </div>
             <div class="timelinePath"></div>
         </div>
@@ -158,9 +157,9 @@ function timeline()
         </div>
         <div class="timelineTile">
             <div class="timelineTileContent">
-                <h2 class="timelineTileTitle">Choose Your Items</h2>
+                <h2 class="timelineTileTitle">Enter Auth code</h2>
                 <span class="timelineSubtitle">Step 2</span>
-                <p class="timelineInfo">Browse the available items on your phone and select what you want to
+                <p class="timelineInfo">Browse the available items on the website and select what you want to
                     order.
                 </p>
             </div>
@@ -172,10 +171,9 @@ function timeline()
         </div>
         <div class="timelineTile">
             <div class="timelineTileContent">
-                <h2 class="timelineTileTitle">Use Voucher</h2>
+                <h2 class="timelineTileTitle">Choose Products</h2>
                 <span class="timelineSubtitle">Step 3</span>
-                <p class="timelineInfo">If you have a voucher code, enter it during checkout to apply your
-                    balance.
+                <p class="timelineInfo">Choose the products you want to order, choose 3 if you have a goodie code, and 1 if you dont.
                 </p>
             </div>
             <div class="timelinePath"></div>
@@ -188,7 +186,7 @@ function timeline()
             <div class="timelineTileContent">
                 <h2 class="timelineTileTitle">Place Order</h2>
                 <span class="timelineSubtitle">Step 4</span>
-                <p class="timelineInfo">Confirm your selection and complete the order through the app or web
+                <p class="timelineInfo">Confirm your selection and complete the order through the web
                     interface.</p>
             </div>
             <div class="timelinePath"></div>
