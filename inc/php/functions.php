@@ -135,8 +135,6 @@ function toast()
     <?php
 }
 
-<<<<<<< Updated upstream
-=======
 function timeline()
 {
     ?>
@@ -211,7 +209,6 @@ function timeline()
     <?php
 }
 
->>>>>>> Stashed changes
 function tooltip()
 {
     ?>
