@@ -12,7 +12,7 @@ header {
 
 .headerNav {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   flex: 2;
 }
@@ -36,7 +36,7 @@ header {
 .headerLinks {
   display: flex;
   gap: 1em;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 900;
   flex-wrap: wrap;
 }
@@ -55,7 +55,7 @@ header {
   justify-content: end;
   /* padding-right: 2em; */
   gap: 0.5em;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   flex: 1;
 }
 
@@ -83,6 +83,10 @@ header {
 
   .headerCallToAction {
     font-size: 1rem;
+  }
+
+  .headerNav {
+    justify-content: center;
   }
 }
 
