@@ -1,5 +1,5 @@
 .aboutTitle {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   font-weight: 900;
   margin-top: 1em;
@@ -7,9 +7,8 @@
 }
 
 .aboutMain {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 1em;
   margin-top: 5em;
   margin-bottom: 5em;
@@ -19,13 +18,7 @@
   grid-area: 1 / 3 / 2 / 4;
   grid-template-rows: repeat(3, 1fr);
   gap: 1em;
-  margin-top: 5em;
-}
-.aboutProject {
-  grid-area: 1 / 1 / 3 / 3;
-}
-.aboutTimeline {
-  grid-area: 1 / 3 / 3 / 4;
+  /* margin-top: 5em; */
 }
 
 .aboutTimeline h1 {
@@ -39,24 +32,25 @@
 .aboutProject {
   grid-area: 1 / 1 / 2 / 3;
   font-size: 1.2rem;
-  display: flex;
+  display: block;
   /* align-items: center; */
   gap: 1em;
 }
 
 .aboutProject h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0 0 0.5em 0;
   font-weight: 900;
 }
 
 .aboutProject h2 {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   margin-top: 0.5em;
 }
 
 .aboutText {
   flex: 2;
+  text-align: center;
 }
 
 .aboutIllustration {
@@ -75,10 +69,55 @@
 
 .aboutAA {
   margin: -3.5em 0em;
-
+}
 .aboutTile {
   background: var(--white);
   border-radius: 1em;
-  border: solid 1px red;
+  /* border: solid 1px red; */
   padding: 1.2em 1.5em;
 }
+
+
+/* xs */
+@media (min-width: 475px) {
+  .aboutProject h1 {
+  font-size: 2.5rem;
+}
+
+.aboutProject h2 {
+  font-size: 1.75rem;
+}
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .aboutTitle {
+  font-size: 3rem;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .aboutProject {
+    display: flex;
+  }
+
+  .aboutText {
+    text-align: left;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .aboutMain {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */
