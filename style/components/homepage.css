@@ -25,7 +25,7 @@
 .heroParagraph {
   margin-bottom: 1.5em;
   font-size: 0.65rem;
-  max-width: 60ch;
+  max-width: 40ch;
 }
 
 .heroImg {
@@ -43,6 +43,7 @@
 }
 .heroParagraph {
   font-size: 0.8rem;
+  max-width: 60ch;
 }
 .heroButton {
   font-size: 1rem;
