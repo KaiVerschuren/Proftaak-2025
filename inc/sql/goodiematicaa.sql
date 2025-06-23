@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 18, 2025 at 09:22 AM
+-- Generation Time: Jun 23, 2025 at 06:23 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -50,7 +50,7 @@ INSERT INTO `authcode` (`id`, `code`, `orders`, `maxOrders`) VALUES
 (458, 'cairn6', 0, 1),
 (459, 'lodge1', 0, 1),
 (462, 'admin321', 15, 9999),
-(463, 'goodie-admin321', 37, 9999),
+(463, 'goodie-admin321', 43, 9999),
 (464, 'goodie-angel0', 0, 5),
 (465, 'goodie-rouge3', 0, 5),
 (466, 'goodie-alibi5', 0, 5),
@@ -92,6 +92,7 @@ CREATE TABLE `product` (
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `position` int NOT NULL,
+  `orderCount` int NOT NULL,
   `img` varchar(255) NOT NULL,
   `productSet` int NOT NULL,
   `categoryId` int NOT NULL
@@ -101,34 +102,34 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `description`, `position`, `img`, `productSet`, `categoryId`) VALUES
-(1, 'Red AA', 'Red 3D printed AA logo', 11, 'assets/placeholderCards.png', 1, 1),
-(2, 'Blue AA', 'Blue 3D printed AA logo', 13, 'assets/placeholderCards.png', 1, 1),
-(3, 'Green AA', 'Green 3D printed AA logo', 15, 'assets/placeholderCards.png', 1, 1),
-(4, 'Yellow AA', 'Yellow 3D printed AA logo', 17, 'assets/placeholderCards.png', 1, 1),
-(5, 'Black AA', 'Black 3D printed AA logo', 21, 'assets/placeholderCards.png', 1, 1),
-(6, 'White AA', 'White 3D printed AA logo', 23, 'assets/placeholderCards.png', 1, 1),
-(7, 'Purple AA', 'Purple 3D printed AA logo', 25, 'assets/placeholderCards.png', 1, 1),
-(8, 'Red Pen', 'Red 3D printed pen', 26, 'assets/placeholderCards.png', 2, 1),
-(9, 'Blue Pen', 'Blue 3D printed pen', 27, 'assets/placeholderCards.png', 2, 1),
-(10, 'Green Pen', 'Green 3D printed pen', 28, 'assets/placeholderCards.png', 2, 1),
-(11, 'Yellow Pen', 'Yellow 3D printed pen', 31, 'assets/placeholderCards.png', 2, 1),
-(12, 'Black Pen', 'Black 3D printed pen', 35, 'assets/placeholderCards.png', 2, 1),
-(13, 'White Pen', 'White 3D printed pen', 37, 'assets/placeholderCards.png', 2, 1),
-(14, 'Purple Pen', 'Purple 3D printed pen', 41, 'assets/placeholderCards.png', 2, 1),
-(15, 'Red Monster Can', 'Red 3D printed Monster can', 42, 'assets/placeholderCards.png', 3, 1),
-(16, 'Blue Monster Can', 'Blue 3D printed Monster can', 43, 'assets/placeholderCards.png', 3, 1),
-(17, 'Green Monster Can', 'Green 3D printed Monster can', 44, 'assets/placeholderCards.png', 3, 1),
-(18, 'Yellow Monster Can', 'Yellow 3D printed Monster can', 45, 'assets/placeholderCards.png', 3, 1),
-(19, 'Black Monster Can', 'Black 3D printed Monster can', 46, 'assets/placeholderCards.png', 3, 1),
-(20, 'White Monster Can', 'White 3D printed Monster can', 48, 'assets/placeholderCards.png', 3, 1),
-(21, 'Purple Monster Can', 'Purple 3D printed Monster can', 51, 'assets/placeholderCards.png', 3, 1),
-(50, 'white monster', '500ml can of monster', 50, 'assets/placeholderCards.png', 1, 2),
-(51, 'blue monster', '500ml can of monster', 51, 'assets/placeholderCards.png', 1, 2),
-(52, 'green monster', '500ml can of monster', 52, 'assets/placeholderCards.png', 1, 2),
-(53, 'red monster', '500ml can of monster', 53, 'assets/placeholderCards.png', 1, 2),
-(54, 'purple monster', '500ml can of monster', 54, 'assets/placeholderCards.png', 1, 2),
-(55, 'orange monster', '500ml can of monster', 55, 'assets/placeholderCards.png', 1, 2);
+INSERT INTO `product` (`id`, `name`, `description`, `position`, `orderCount`, `img`, `productSet`, `categoryId`) VALUES
+(1, 'Red AA', 'Red 3D printed AA logo', 11, 1, 'assets/placeholderCards.png', 1, 1),
+(2, 'Blue AA', 'Blue 3D printed AA logo', 13, 1, 'assets/placeholderCards.png', 1, 1),
+(3, 'Green AA', 'Green 3D printed AA logo', 15, 0, 'assets/placeholderCards.png', 1, 1),
+(4, 'Yellow AA', 'Yellow 3D printed AA logo', 17, 0, 'assets/placeholderCards.png', 1, 1),
+(5, 'Black AA', 'Black 3D printed AA logo', 21, 0, 'assets/placeholderCards.png', 1, 1),
+(6, 'White AA', 'White 3D printed AA logo', 23, 2, 'assets/placeholderCards.png', 1, 1),
+(7, 'Purple AA', 'Purple 3D printed AA logo', 25, 1, 'assets/placeholderCards.png', 1, 1),
+(8, 'Red Pen', 'Red 3D printed pen', 26, 0, 'assets/placeholderCards.png', 2, 1),
+(9, 'Blue Pen', 'Blue 3D printed pen', 27, 0, 'assets/placeholderCards.png', 2, 1),
+(10, 'Green Pen', 'Green 3D printed pen', 28, 0, 'assets/placeholderCards.png', 2, 1),
+(11, 'Yellow Pen', 'Yellow 3D printed pen', 31, 0, 'assets/placeholderCards.png', 2, 1),
+(12, 'Black Pen', 'Black 3D printed pen', 35, 0, 'assets/placeholderCards.png', 2, 1),
+(13, 'White Pen', 'White 3D printed pen', 37, 2, 'assets/placeholderCards.png', 2, 1),
+(14, 'Purple Pen', 'Purple 3D printed pen', 41, 3, 'assets/placeholderCards.png', 2, 1),
+(15, 'Red Monster Can', 'Red 3D printed Monster can', 42, 0, 'assets/placeholderCards.png', 3, 1),
+(16, 'Blue Monster Can', 'Blue 3D printed Monster can', 43, 1, 'assets/placeholderCards.png', 3, 1),
+(17, 'Green Monster Can', 'Green 3D printed Monster can', 44, 0, 'assets/placeholderCards.png', 3, 1),
+(18, 'Yellow Monster Can', 'Yellow 3D printed Monster can', 45, 0, 'assets/placeholderCards.png', 3, 1),
+(19, 'Black Monster Can', 'Black 3D printed Monster can', 46, 0, 'assets/placeholderCards.png', 3, 1),
+(20, 'White Monster Can', 'White 3D printed Monster can', 48, 2, 'assets/placeholderCards.png', 3, 1),
+(21, 'Purple Monster Can', 'Purple 3D printed Monster can', 51, 2, 'assets/placeholderCards.png', 3, 1),
+(50, 'white monster', '500ml can of monster', 50, 0, 'assets/placeholderCards.png', 1, 2),
+(51, 'blue monster', '500ml can of monster', 51, 2, 'assets/placeholderCards.png', 1, 2),
+(52, 'green monster', '500ml can of monster', 52, 0, 'assets/placeholderCards.png', 1, 2),
+(53, 'red monster', '500ml can of monster', 53, 0, 'assets/placeholderCards.png', 1, 2),
+(54, 'purple monster', '500ml can of monster', 54, 0, 'assets/placeholderCards.png', 1, 2),
+(55, 'orange monster', '500ml can of monster', 55, 0, 'assets/placeholderCards.png', 1, 2);
 
 --
 -- Indexes for dumped tables
