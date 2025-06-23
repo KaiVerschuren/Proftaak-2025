@@ -85,14 +85,14 @@ INSERT INTO `product` (`id`, `name`, `description`, `position`, `orderCount`, `i
 (16, 'Blue Monster Can', 'Blue 3D printed Monster can', 43, 1, 'assets/placeholderCards.png', 3, 1),
 (17, 'Green Monster Can', 'Green 3D printed Monster can', 44, 0, 'assets/placeholderCards.png', 3, 1),
 (18, 'Yellow Monster Can', 'Yellow 3D printed Monster can', 45, 0, 'assets/placeholderCards.png', 3, 1),
-(19, 'Black Monster Can', 'Black 3D printed Monster can', 46, 0, 'assets/placeholderCards.png', 3, 1),
-(20, 'White Monster Can', 'White 3D printed Monster can', 48, 2, 'assets/placeholderCards.png', 3, 1),
-(21, 'Purple Monster Can', 'Purple 3D printed Monster can', 51, 2, 'assets/placeholderCards.png', 3, 1),
-(50, 'white monster', '500ml can of monster', 50, 0, 'assets/placeholderCards.png', 1, 2),
-(51, 'blue monster', '500ml can of monster', 51, 2, 'assets/placeholderCards.png', 1, 2),
-(52, 'green monster', '500ml can of monster', 52, 0, 'assets/placeholderCards.png', 1, 2),
-(53, 'red monster', '500ml can of monster', 53, 0, 'assets/placeholderCards.png', 1, 2),
-(54, 'purple monster', '500ml can of monster', 54, 0, 'assets/placeholderCards.png', 1, 2),
+(19, 'Black Monster Can', 'Black 3D printed Monster can', 48, 0, 'assets/placeholderCards.png', 3, 1),
+(20, 'White Monster Can', 'White 3D printed Monster can', 51, 2, 'assets/placeholderCards.png', 3, 1),
+(21, 'Purple Monster Can', 'Purple 3D printed Monster can', 52, 2, 'assets/placeholderCards.png', 3, 1),
+(50, 'white monster', '500ml can of monster', 53, 0, 'assets/placeholderCards.png', 1, 2),
+(51, 'blue monster', '500ml can of monster', 54, 2, 'assets/placeholderCards.png', 1, 2),
+(52, 'green monster', '500ml can of monster', 55, 0, 'assets/placeholderCards.png', 1, 2),
+(53, 'red monster', '500ml can of monster', 56, 0, 'assets/placeholderCards.png', 1, 2),
+(54, 'purple monster', '500ml can of monster', 57, 0, 'assets/placeholderCards.png', 1, 2),
 (55, 'orange monster', '500ml can of monster', 55, 0, 'assets/placeholderCards.png', 1, 2);
 
 
