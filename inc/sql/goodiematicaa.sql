@@ -1,42 +1,20 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Host: localhost:3306
--- Generation Time: Jun 23, 2025 at 06:23 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `goodiematicaa`
---
 
--- --------------------------------------------------------
 
---
--- Table structure for table `authcode`
---
 
 CREATE TABLE `authcode` (
   `id` int NOT NULL,
-  `code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `orders` int NOT NULL,
   `maxOrders` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `authcode`
---
 
 INSERT INTO `authcode` (`id`, `code`, `orders`, `maxOrders`) VALUES
 (450, 'goodie-balky0', 1, 1),
@@ -62,30 +40,19 @@ INSERT INTO `authcode` (`id`, `code`, `orders`, `maxOrders`) VALUES
 (472, 'goodie-joust8', 1, 1),
 (473, 'goodie-punch1', 1, 1);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `category`
---
 
 CREATE TABLE `category` (
   `id` int NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `category`
---
 
 INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'goodie'),
 (2, 'other\r\n');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `product`
---
 
 CREATE TABLE `product` (
   `id` int NOT NULL,
@@ -96,11 +63,8 @@ CREATE TABLE `product` (
   `img` varchar(255) NOT NULL,
   `productSet` int NOT NULL,
   `categoryId` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `product`
---
 
 INSERT INTO `product` (`id`, `name`, `description`, `position`, `orderCount`, `img`, `productSet`, `categoryId`) VALUES
 (1, 'Red AA', 'Red 3D printed AA logo', 11, 1, 'assets/placeholderCards.png', 1, 1),
@@ -131,62 +95,28 @@ INSERT INTO `product` (`id`, `name`, `description`, `position`, `orderCount`, `i
 (54, 'purple monster', '500ml can of monster', 54, 0, 'assets/placeholderCards.png', 1, 2),
 (55, 'orange monster', '500ml can of monster', 55, 0, 'assets/placeholderCards.png', 1, 2);
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `authcode`
---
 ALTER TABLE `authcode`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `category`
---
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `product`
---
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category` (`categoryId`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `authcode`
---
 ALTER TABLE `authcode`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=474;
 
---
--- AUTO_INCREMENT for table `category`
---
 ALTER TABLE `category`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- AUTO_INCREMENT for table `product`
---
 ALTER TABLE `product`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
---
--- Constraints for dumped tables
---
 
---
--- Constraints for table `product`
---
 ALTER TABLE `product`
   ADD CONSTRAINT `category` FOREIGN KEY (`categoryId`) REFERENCES `category` (`id`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
