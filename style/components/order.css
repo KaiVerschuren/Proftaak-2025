@@ -2,6 +2,7 @@
   display: flex;
   overflow: hidden;
   padding: 3em 0;
+  margin-top: 0em;
 }
 
 .category {
@@ -16,7 +17,8 @@
 
 .categoryOption {
   width: 9em;
-  aspect-ratio: 11/12;
+  /* aspect-ratio: 11/12; */
+  height: 14em;
   background-color: var(--white);
   border-radius: 1em;
   transition: ease 0.3s;
@@ -32,6 +34,7 @@
   width: 9em;
   aspect-ratio: 12/8;
   border-radius: 1em 1em 0 0;
+  padding: 1rem;
 }
 
 .categoryInfo {
@@ -67,7 +70,7 @@
 }
 
 .orderForm {
-  margin-bottom: 5em;
+  /* margin-bottom: 5em; */
   display: flex;
   justify-content: center;
 }
@@ -90,6 +93,9 @@
   .categoryOption,
   .categoryOptionImage {
     width: 12.5em;
+  }
+  .categoryOption {
+    height: 17.5em;
   }
   .categoryInfo {
     font-size: 0.8rem;
@@ -117,7 +123,11 @@
 }
 
 /* xl */
-/* @media (min-width: 1280px) {} */
+@media (min-width: 1280px) {
+  .categoryWrapper {
+      margin-top: 10em;
+  }
+}
 
 /* 2xl */
 /* @media (min-width: 1536px) {} */

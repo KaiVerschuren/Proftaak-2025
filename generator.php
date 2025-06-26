@@ -136,7 +136,7 @@ headerFunc();
     <div class="generator">
         <div class="generatedCodes generatorTile cardShadow">
             <div class="codesRow codesRowHeader">
-                <div class="code">Code:</div>
+                <div class="code codeHeader">Code:</div>
                 <div class="uses">Uses:</div>
                 <div class="maxUses">Max Uses:</div>
                 <div class="options">Options:</div>
@@ -145,7 +145,7 @@ headerFunc();
             foreach ($codes as $code) {
                 ?>
                 <div class="codesRow">
-                    <div class="code"><?php echo $code['code']; ?></div>
+                    <div class="code"><span class="codeInner" data-id="<?php echo $code['id']; ?>" ><?php echo $code['code']; ?></span></div>
                     <div class="uses"><?php echo $code['orders']; ?></div>
                     <div class="maxUses"><?php echo $code['maxOrders']; ?></div>
                     <div class="options">

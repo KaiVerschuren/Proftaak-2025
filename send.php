@@ -13,22 +13,10 @@ $productThree = $_GET['productThree'];
 
 // Validate each as a numeric value
 foreach ([$productOne, $productTwo, $productThree] as $product) {
-    if (!ctype_digit($product)) {
-        echo "Error: Invalid product number detected.";
-        exit;
-    }
-}
-if (!isset($_GET['slot'])) {
-    echo "Error: No slot parameter provided.";
-    exit;
-}
-
-$slot = $_GET['slot'];
-
-// Validate slot as numeric (optional, but recommended)
-if (!ctype_digit($slot)) {
-    echo "Error: Invalid slot number.";
-    exit;
+    // if (!ctype_digit($product)) {
+    //     echo "Error: Invalid product number detected.";
+    //     exit;
+    // }
 }
 
 $serialPort = '/dev/ttyACM0';

@@ -56,10 +56,15 @@ $(document).ready(function () {
 
     checkSelected();
 
+    $(".popupTablePosition1").html($(this).data("position"));
+    $(".popupTableTitle1").html($(this).data("name"));
+
     let goodieData = $("#goodieData").data("goodie");
     // alert(goodieData);
     if (goodieData != "1") {
-      $(".orderForm").show();
+      // alert();
+      $(".popupBackground").show();
+      $(".popupHide").hide();
     }
   });
 
@@ -70,6 +75,9 @@ $(document).ready(function () {
     $("#productTwo").val($(this).data("position")); // update on click
 
     checkSelected();
+
+    $(".popupTablePosition2").html($(this).data("position"));
+    $(".popupTableTitle2").html($(this).data("name"));
   });
 
   $(".setThree").on("click", function () {
@@ -77,8 +85,11 @@ $(document).ready(function () {
     $(this).addClass("selectedSetThree");
 
     $("#productThree").val($(this).data("position")); // update on click
+    $(".popupTablePosition3").html($(this).data("position"));
+    $(".popupTableTitle3").html($(this).data("name"));
 
     checkSelected();
+
   });
 
   function checkSelected() {
@@ -101,11 +112,14 @@ $(document).ready(function () {
         .addClass("btnSecondary");
     }
     if (setOneComplete && setTwoComplete && setThreeComplete) {
-
-      $(".orderForm").show();
+      $(".popupBackground").show();
       requestAnimationFrame(() => {
         requestAnimationFrame(adjustFooter);
       });
     }
   }
+
+  $('#popupChangeButton').on('click', function() {
+    location.reload();
+  });
 });
