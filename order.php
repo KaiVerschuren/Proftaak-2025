@@ -32,15 +32,16 @@ if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
         ];
 
         addUse($_SESSION['setCodeId']);
-        $_SESSION['setCodeUses']++; // remove this if `addUse()` updates session or DB
+        $_SESSION['setCodeUses']++;
 
         $setCodeUses = (int) $_SESSION['setCodeUses'];
         $usesLeft = $setCodeUses < $setCodeMaxUses;
-
+        
         $orderSuccess = true;
         toggleToast('success', 'Products were ordered :D', 'index.php');
-
+        
         if (!$usesLeft) {
+            
             toggleToast("error", "You have no uses left for this code.", "index.php");
         }
     }

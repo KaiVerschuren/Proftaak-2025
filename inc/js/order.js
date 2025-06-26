@@ -12,6 +12,10 @@ $(document).ready(function () {
   let setTwoComplete = false;
   let setThreeComplete = false;
 
+  // $(document).ready(function() {
+  //   $(".popupBackground").show();
+  // });
+
   function showCategory(index) {
     categories.css("transform", `translateX(-${100 * index}%)`);
 
