@@ -5,6 +5,13 @@
   margin-top: 0em;
 }
 
+.orderTitle {
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 0em;
+}
+
 .category {
   display: flex;
   justify-content: center;
@@ -35,6 +42,7 @@
   aspect-ratio: 12/8;
   border-radius: 1em 1em 0 0;
   padding: 1rem;
+  background-color: var(--black);
 }
 
 .categoryInfo {
@@ -103,6 +111,10 @@
   .categoryOptionTitle {
     font-size: 1.2rem;
   }
+  .orderTitle {
+    font-size: 3rem;
+    margin-top: 2em;
+  }
 }
 
 /* md */
@@ -123,11 +135,7 @@
 }
 
 /* xl */
-@media (min-width: 1280px) {
-  .categoryWrapper {
-      margin-top: 10em;
-  }
-}
+/* @media (min-width: 1280px) {} */
 
 /* 2xl */
 /* @media (min-width: 1536px) {} */

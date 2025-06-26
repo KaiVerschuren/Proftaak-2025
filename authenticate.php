@@ -8,37 +8,58 @@ $codes = fetchCodes();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $authCode = $_POST['authCode'];
-    $matchedCode = null;
-
     foreach ($codes as $code) {
-        if ($code['code'] === $authCode) {
-            $matchedCode = $code;
-            break;
-        }
-    }
+        if ($code['code'] == $authCode && $authCode != "admin321" && $authCode != "goodie-admin321") {
+            $_SESSION['authenticated'] = true;
 
-    if (!$matchedCode) {
-        toggleToast("error", "Authentication failed. Code " . $authCode . " not found.", "authenticate.php");
-        $_SESSION['authenticated'] = false;
-    } else {
-        $_SESSION['authenticated'] = true;
-        $_SESSION['admin'] = in_array($authCode, ["admin321", "goodie-admin321"]);
-        $_SESSION['goodieCode'] = $authCode === "goodie-admin321" || checkGoodiePrefix($matchedCode['code']);
-        $_SESSION['setCode'] = $matchedCode['code'];
-        $_SESSION['setCodeId'] = $matchedCode['id'];
-        $_SESSION['setCodeUses'] = (int) $matchedCode['orders'];
-        $_SESSION['setCodeMaxUses'] = (int) $matchedCode['maxOrders'];
+            // check if the auth code is a code for a goodiebag
+            if (checkGoodiePrefix($code['code'])) {
+                $_SESSION['goodieCode'] = true;
+            } else {
+                $_SESSION['goodieCode'] = false;
+            }
 
-        if ($_SESSION['admin']) {
-            header("location: generator.php");
-        } else {
-            getUses($matchedCode['id']);
+            getUses($code['id']);
+
+            $_SESSION['setCode'] = $code['code'];
+            $_SESSION['setCodeId'] = $code['id'];
+            $_SESSION['setCodeUses'] = $code['orders'];
+            $_SESSION['setCodeMaxUses'] = $code['maxOrders'];
+            $_SESSION['admin'] = false;
             header("location: order.php");
+            exit();
+        } else {
+            toggleToast("error", "Authentication failed. Code " . $authCode . " not found.");
+            $_SESSION['authenticated'] = false;
         }
+        if ($authCode == "admin321") {
+            $_SESSION['authenticated'] = true;
+            $_SESSION['admin'] = true;
+            $_SESSION['goodieCode'] = false;
+            $_SESSION['setCode'] = $authCode;
+            $_SESSION['setCodeId'] = 1;   
+            $_SESSION['setCodeUses'] = 0;
+            $_SESSION['setCodeMaxUses'] = 9999;
 
-        exit();
+            header("location: generator.php");
+            exit();
+        }
+        if ($authCode == "goodie-admin321") {
+            $_SESSION['authenticated'] = true;
+            $_SESSION['admin'] = true;
+            $_SESSION['goodieCode'] = true;
+            $_SESSION['setCode'] = $authCode;
+            $_SESSION['setCodeId'] = 2;   
+            $_SESSION['setCodeUses'] = 0;
+            $_SESSION['setCodeMaxUses'] = 9999;
+
+            header("location: generator.php");
+            exit();
+        }
     }
 }
+
+
 head("Authenticate");
 
 headerFunc();
