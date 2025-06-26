@@ -22,7 +22,7 @@ function head($page)
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
         <title><?php echo $page ?> | GoodieMaticAa</title>
-        <link rel="icon" type="image/x-icon" href="assets/AA.png">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png">
     </head>
     <?php
 }
