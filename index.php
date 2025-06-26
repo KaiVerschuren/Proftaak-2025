@@ -1,8 +1,10 @@
 <?php
 include 'inc/php/functions.php';
+include 'inc/php/dbconnect.php';
 
 initSession();
 
+$products = getTopProducts();
 
 head("Homepage");
 
@@ -31,33 +33,20 @@ headerFunc();
             <h1 class="topTitle">Our <span class="titlePrimary">top bought</span> products</h2>
         </div>
         <div class="topCardWrapper">
-            <div class="topCard cardShadow">
-                <img src="./assets/placeholderCards.png" class="topCardImg">
-                <div class="topCardInfo">
-                    <h2 class="topCardTitle">SmoothWrite Pen</h2>
-                    <p class="topCartText">Reliable ballpoint pen with smooth ink flow.</p>
-                    <button class="btnPrimary topCardButton">Order now!</button>
+            <?php
+            foreach ($products as $product) {
+                ?>
+                <div class="topCard cardShadow">
+                    <img src="<?php echo $product['img']; ?>" class="topCardImg" alt="Image of product">
+                    <div class="topCardInfo">
+                        <h2 class="topCardTitle"><?php echo $product['name']; ?></h2>
+                        <p class="topCartText"><?php echo $product['description']; ?></p>
+                        <button class="btnPrimary topCardButton">Order now!</button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="topCard cardShadow">
-                <img src="./assets/placeholderCards.png" alt="3D Printed AA Statue" class="topCardImg">
-                <div class="topCardInfo">
-                    <h2 class="topCardTitle">AA 3D Print</h2>
-                    <p class="topCartText">Colored 3D-printed "AA" statue. Great for desk decoration.</p>
-                    <button class="btnPrimary topCardButton">Order now!</button>
-                </div>
-            </div>
-
-            <div class="topCard cardShadow">
-                <img src="./assets/placeholderCards.png" alt="White Monster Can" class="topCardImg">
-                <div class="topCardInfo">
-                    <h2 class="topCardTitle">Monster Ultra</h2>
-                    <p class="topCartText">Crisp white Monster energy drink. Zero sugar, full energy. Stay sharp!</p>
-                    <button class="btnPrimary topCardButton">Order now!</button>
-                </div>
-            </div>
-
+                <?php
+            }
+            ?>
         </div>
     </div>
     <div class="timeline">
@@ -70,7 +59,8 @@ headerFunc();
                 <div class="timelineTileContent">
                     <h2 class="timelineTileTitle">Scan QR Code</h2>
                     <span class="timelineSubtitle">Step 1</span>
-                    <p class="timelineInfo">Open your phone camera or scanner app and scan the QR code shown on the vending machine.</p>
+                    <p class="timelineInfo">Open your phone camera or scanner app and scan the QR code shown on the
+                        vending machine.</p>
                 </div>
                 <div class="timelinePath"></div>
             </div>
@@ -104,7 +94,7 @@ headerFunc();
             <div class="timelineIcon">
                 <span class="timelineIconText">4</span>
             </div>
-            <div class="timelineTile">
+            <div class="timelineTile">    
                 <div class="timelineTileContent">
                     <h2 class="timelineTileTitle">Place Order</h2>
                     <span class="timelineSubtitle">Step 4</span>

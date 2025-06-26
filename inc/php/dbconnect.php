@@ -310,3 +310,47 @@ function getUses($id) {
 
     return $orders;
 }
+
+/**
+ * function to += 1; to the order counter of a product, based on its position value.
+ * @param mixed $position Position of product in vending machine.
+ * @return bool $result 
+ */
+function addOrderCount($position) {
+    $mysqli = connectDB();
+
+    $stmt = $mysqli->prepare("UPDATE product SET orderCount = orderCount + 1 WHERE position = ?");
+    $stmt->bind_param("i", $position);
+    $result = $stmt->execute();
+
+    $stmt->close();
+    $mysqli->close();
+
+    return $result;
+}
+
+/**
+ * Gets the top 3 products byy orderCount
+ * @return array<array|bool|null>
+ */
+function getTopProducts() {
+    $mysqli = connectDB();
+
+    $sql = "SELECT * FROM product ORDER BY orderCount DESC LIMIT 3";
+    $result = $mysqli->query($sql);
+
+    if (!$result) {
+        echo "Query failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        return [];
+    }
+
+    $topProducts = [];
+
+    while ($row = $result->fetch_assoc()) {
+        $topProducts[] = $row;
+    }
+
+    $mysqli->close();
+
+    return $topProducts;
+}

@@ -40,8 +40,11 @@ if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
         $orderSuccess = true;
         toggleToast('success', 'Products were ordered :D', 'index.php');
 
-        if (!$usesLeft) {
+        foreach ($selectedProducts as $product) {
+            addOrderCount($product);
+        }
 
+        if (!$usesLeft) {
             toggleToast("error", "You have no uses left for this code.", "index.php");
         }
     }
