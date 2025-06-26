@@ -36,12 +36,12 @@ if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true) {
 
         $setCodeUses = (int) $_SESSION['setCodeUses'];
         $usesLeft = $setCodeUses < $setCodeMaxUses;
-        
+
         $orderSuccess = true;
         toggleToast('success', 'Products were ordered :D', 'index.php');
-        
+
         if (!$usesLeft) {
-            
+
             toggleToast("error", "You have no uses left for this code.", "index.php");
         }
     }
@@ -112,6 +112,17 @@ head("Order");
 headerFunc();
 ?>
 <main class="container">
+    <?php
+    if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == false) {
+        ?>
+        <h1 class="orderTitle">Choose one product</h1>
+        <?php
+    } else {
+        ?>
+        <h1 class="orderTitle">Choose one product per set</h1>
+        <?php
+    }
+    ?>
     <div class="categoryWrapper">
         <?php
         if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == false) {
@@ -120,7 +131,8 @@ headerFunc();
                 <?php
                 foreach ($products as $product) {
                     ?>
-                    <div data-position="<?php echo $product['position']; ?>" data-name="<?php echo $product['name']; ?>" class="setOne categoryOption cardShadow">
+                    <div data-position="<?php echo $product['position']; ?>" data-name="<?php echo $product['name']; ?>"
+                        class="setOne categoryOption cardShadow">
                         <img src="<?php echo $product['img']; ?>" alt="Placeholder" class="categoryOptionImage">
                         <div class="categoryInfo">
                             <h1 class="categoryOptionTitle"><?php echo $product['name']; ?></h1>
@@ -160,7 +172,8 @@ headerFunc();
                     ?>
                     <div data-position="<?php echo $product['position']; ?>" data-name="<?php echo $product['name']; ?>"
                         class="setTwo categoryOption cardShadow">
-                        <img src="<?php echo $product['img']; ?>" alt="Placeholder" class="categoryOptionImage categoryOptionImageSet2">
+                        <img src="<?php echo $product['img']; ?>" alt="Placeholder"
+                            class="categoryOptionImage categoryOptionImageSet2">
                         <div class="categoryInfo">
                             <h1 class="categoryOptionTitle"><?php echo $product['name']; ?></h1>
                             <p class="categoryOptionInfo"><?php echo $product['description']; ?></p>
@@ -236,7 +249,7 @@ headerFunc();
                 <img src="./assets/AA.png" alt="Ter AA logo">
             </div>
         </div>
-    
+
         <form method="post" class="orderForm">
             <input type="hidden" id="productOne" name="productOne" value="<?php echo $productOne; ?>">
             <?php if (isset($_SESSION['goodieCode']) && $_SESSION['goodieCode'] == true): ?>
